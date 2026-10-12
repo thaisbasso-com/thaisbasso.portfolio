@@ -41,11 +41,15 @@
       overflow-x: hidden;
     }
 
+    body.modal-open { overflow: hidden; }
+
     a { color: inherit; }
 
     button, a { -webkit-tap-highlight-color: transparent; }
 
-    a:focus-visible, button:focus-visible {
+    a:focus-visible,
+    button:focus-visible,
+    .work-card:focus-visible {
       outline: 3px dashed var(--blue);
       outline-offset: 5px;
     }
@@ -131,15 +135,6 @@
       align-items: center;
       gap: 20px;
     }
-
-    .wordmark {
-      font: 24px/.9 var(--display);
-      letter-spacing: -.07em;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .wordmark span { color: var(--blue); }
 
     .nav-links {
       display: flex;
@@ -362,9 +357,7 @@
       line-height: 1.65;
     }
 
-    .service-list {
-      border-top: var(--line);
-    }
+    .service-list { border-top: var(--line); }
 
     .service {
       display: grid;
@@ -411,15 +404,27 @@
       display: flex;
       flex-direction: column;
       min-width: 0;
+      padding: 0;
       border: var(--line);
       background: var(--paper);
       box-shadow: 6px 6px 0 var(--ink);
       transition: transform .2s, box-shadow .2s;
+      cursor: pointer;
+      color: var(--ink);
+      font: inherit;
+      text-align: left;
+      appearance: none;
+      width: 100%;
     }
 
     .work-card:hover {
       transform: translate(3px, 3px);
       box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    .work-card:focus-visible {
+      outline: 4px dashed var(--blue);
+      outline-offset: 5px;
     }
 
     .work-art {
@@ -432,6 +437,7 @@
       overflow: hidden;
       border-bottom: var(--line);
       position: relative;
+      width: 100%;
     }
 
     .work-art::after {
@@ -494,6 +500,7 @@
       flex-direction: column;
       align-items: flex-start;
       padding: 23px;
+      width: 100%;
     }
 
     .work-meta {
@@ -524,13 +531,13 @@
     }
 
     .work-link {
+      display: inline-block;
       margin-top: auto;
       font: 11px var(--mono);
       text-transform: uppercase;
+      text-decoration: underline;
       text-underline-offset: 4px;
     }
-
-    .work-link:hover { color: var(--blue); }
 
     .work-disclaimer {
       margin-top: 35px;
@@ -538,6 +545,152 @@
       border-top: var(--line);
       font: 11px/1.6 var(--mono);
       text-transform: uppercase;
+    }
+
+    .click-hint {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 10px;
+      background: var(--yellow);
+      border: 1px solid var(--ink);
+      font: 10px var(--mono);
+      text-transform: uppercase;
+    }
+
+    /* POP-UP DOS PROJETOS */
+
+    .project-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(23, 23, 23, .82);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s ease, visibility .2s ease;
+    }
+
+    .project-modal.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .project-modal-panel {
+      position: relative;
+      width: min(820px, 100%);
+      max-height: min(85vh, 900px);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: clamp(25px, 5vw, 58px);
+      color: var(--ink);
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      box-shadow: 9px 9px 0 var(--yellow);
+      transform: translateY(18px) scale(.98);
+      transition: transform .2s ease;
+    }
+
+    .project-modal.is-open .project-modal-panel {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 20px;
+      border-bottom: var(--line);
+    }
+
+    .modal-label {
+      font: 11px/1.5 var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .modal-close {
+      flex: 0 0 auto;
+      padding: 11px 14px;
+      border: 2px solid var(--ink);
+      background: var(--yellow);
+      color: var(--ink);
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+
+    .modal-close:hover {
+      background: var(--red);
+      color: white;
+    }
+
+    .modal-project-title {
+      margin: 35px 0 22px;
+      font: clamp(38px, 7vw, 78px)/.88 var(--display);
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .modal-project-description {
+      max-width: 680px;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .modal-project-description p { margin: 0 0 20px; }
+
+    .modal-project-description strong {
+      display: block;
+      margin-bottom: 4px;
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .modal-project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 25px 0;
+    }
+
+    .modal-project-tags span {
+      padding: 7px 9px;
+      border: 1px solid var(--ink);
+      font: 10px var(--mono);
+      text-transform: uppercase;
+    }
+
+    .modal-project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+      padding: 14px 18px;
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      background: var(--blue);
+      color: white;
+      font: 11px var(--mono);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform .15s, box-shadow .15s;
+    }
+
+    .modal-project-link:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--ink);
+      background: var(--red);
     }
 
     /* ABOUT */
@@ -805,6 +958,14 @@
       .work-art { min-height: 190px; }
       .timeline-item { grid-template-columns: 110px 1fr; gap: 18px; }
       .contact-bottom { align-items: flex-start; flex-direction: column; }
+
+      .project-modal { padding: 12px; }
+
+      .project-modal-panel {
+        max-height: 90vh;
+        padding: 25px;
+        box-shadow: 5px 5px 0 var(--yellow);
+      }
     }
 
     @media (max-width: 540px) {
@@ -822,6 +983,25 @@
       .timeline-date br { display: none; }
       .contact-title { font-size: 17vw; }
       footer { flex-direction: column; gap: 7px; }
+
+      .modal-topline {
+        align-items: flex-start;
+      }
+
+      .modal-project-title {
+        font-size: clamp(36px, 11vw, 58px);
+      }
+
+      .modal-project-description {
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-modal,
+      .project-modal-panel {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -829,8 +1009,7 @@
 <body>
   <header>
     <nav class="nav wrap" aria-label="Navegação principal">
-
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" type="button">
         Menu +
       </button>
 
@@ -855,7 +1034,6 @@
         <span class="line blue">BASSO<span class="outline">®</span></span>
       </h1>
 
-
       <div class="hero-middle">
         <div class="hero-intro">
           Eu escrevo pra sobreviver. <strong>Literalmente.</strong>
@@ -864,7 +1042,7 @@
         <div class="hero-side">
           <span class="eyebrow">Oie :)</span>
           <p>
-            Redatora sênior que flerta horrores com tech. 
+            Redatora sênior que flerta horrores com tech.
             Crio ideias que vendem, textos que convertem e ferramentas de criatividade pra todo tipo de profissional curioso.
           </p>
           <a class="arrow-link" href="#trabalhos">
@@ -941,35 +1119,39 @@
         <div class="section-heading">
           <div>
             <span class="eyebrow">Arquivo de coisas feitas</span>
-            <h2>Seleção de trabalheira<br></h2>
+            <h2>Seleção de trabalheira</h2>
           </div>
           <p>Só a nata do mercado.</p>
         </div>
 
         <div class="work-grid">
-          <article class="work-card">
+
+          <!-- PROJETO 1: BRADESCO -->
+          <button class="work-card" type="button" data-project="bradesco" aria-haspopup="dialog" aria-label="Abrir detalhes do projeto Bradesco">
             <div class="work-art art-blue">
               <span class="art-label">01 / Comunicação financeira</span>
-              <div class="art-big">BRADESCO<br></div>
+              <div class="art-big">BRADESCO</div>
             </div>
             <div class="work-content">
               <div class="work-meta">
                 <span class="tag">Bradesco</span>
-                <span class="tag">CRM</span>
+                <span class="tag">Criatividade</span>
                 <span class="tag">Performance</span>
               </div>
               <h3>Comunicação que aprende com o caminho</h3>
               <p>
                 Experiência com jornadas, réguas de comunicação, campanhas e landing pages. Trabalho de texto conectado à segmentação, à hierarquia de informação e à leitura de indicadores.
               </p>
-              <a class="work-link" href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Explorar portfólio ↗</a>
+              <span class="work-link">Abrir projeto ↗</span>
+              <span class="click-hint">Clique para explorar ↗</span>
             </div>
-          </article>
+          </button>
 
-          <article class="work-card">
+          <!-- PROJETO 2: SANTANDER -->
+          <button class="work-card" type="button" data-project="santander" aria-haspopup="dialog" aria-label="Abrir detalhes do projeto Santander">
             <div class="work-art art-red">
               <span class="art-label">02 / Campanhas integradas</span>
-              <div class="art-big">SANTANDER<br></div>
+              <div class="art-big">SANTANDER</div>
             </div>
             <div class="work-content">
               <div class="work-meta">
@@ -981,14 +1163,16 @@
               <p>
                 Atuação em campanhas e comunicação para canais digitais, com desdobramentos de texto, jornadas e peças orientadas a objetivos de negócio.
               </p>
-              <a class="work-link" href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Explorar portfólio ↗</a>
+              <span class="work-link">Abrir projeto ↗</span>
+              <span class="click-hint">Clique para explorar ↗</span>
             </div>
-          </article>
+          </button>
 
-          <article class="work-card">
+          <!-- PROJETO 3: PETZ -->
+          <button class="work-card" type="button" data-project="petz" aria-haspopup="dialog" aria-label="Abrir detalhes do projeto Petz">
             <div class="work-art art-yellow">
               <span class="art-label">03 / Marca & conteúdo</span>
-              <div class="art-big">PETZ<br></div>
+              <div class="art-big">PETZ</div>
             </div>
             <div class="work-content">
               <div class="work-meta">
@@ -1000,11 +1184,13 @@
               <p>
                 Rebranding, comunicação de marca, campanhas para produtos próprios e conteúdo para diferentes pontos de contato.
               </p>
-              <a class="work-link" href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Explorar portfólio ↗</a>
+              <span class="work-link">Abrir projeto ↗</span>
+              <span class="click-hint">Clique para explorar ↗</span>
             </div>
-          </article>
+          </button>
 
-          <article class="work-card">
+          <!-- PROJETO 4: IA -->
+          <button class="work-card" type="button" data-project="ia" aria-haspopup="dialog" aria-label="Abrir detalhes do projeto de IA">
             <div class="work-art art-black">
               <span class="art-label">04 / Pesquisa & experimentação</span>
               <div class="art-big small">IDEIAS<br>FORA DO<br>CTRL+C.</div>
@@ -1019,16 +1205,59 @@
               <p>
                 IA aplicada à pesquisa, prototipagem e produção de comunicação, com foco em ampliar possibilidades criativas.
               </p>
-              <a class="work-link" href="https://thaisbasso.substack.com/" target="_blank" rel="noopener noreferrer">Ler meus textos ↗</a>
+              <span class="work-link">Abrir projeto ↗</span>
+              <span class="click-hint">Clique para explorar ↗</span>
             </div>
-          </article>
+          </button>
+
         </div>
 
         <p class="work-disclaimer">
-          >>> Eu sei, já fiz muita coisa e isso é wonderful.
+          &gt;&gt;&gt; Eu sei, já fiz muita coisa e isso é wonderful.
         </p>
       </div>
     </section>
+
+    <!-- JANELA POP-UP: CONTEÚDO DINÂMICO -->
+    <div
+      class="project-modal"
+      id="projectModal"
+      aria-hidden="true"
+      role="presentation"
+    >
+      <section
+        class="project-modal-panel"
+        id="projectModalPanel"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalDescription"
+        tabindex="-1"
+      >
+        <div class="modal-topline">
+          <span class="modal-label" id="modalLabel">Projeto</span>
+          <button class="modal-close" id="modalClose" type="button" aria-label="Fechar janela do projeto">
+            FECHAR ✕
+          </button>
+        </div>
+
+        <h2 class="modal-project-title" id="modalTitle">Projeto</h2>
+
+        <div class="modal-project-description" id="modalDescription"></div>
+
+        <div class="modal-project-tags" id="modalTags"></div>
+
+        <a
+          class="modal-project-link"
+          id="modalLink"
+          href="https://www.behance.net/thaisbassocc"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver mais trabalhos ↗
+        </a>
+      </section>
+    </div>
 
     <section class="section wrap">
       <div class="about-grid">
@@ -1169,6 +1398,8 @@
   </footer>
 
   <script>
+    /* MENU MOBILE */
+
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
@@ -1187,6 +1418,212 @@
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+
+    /* CONTEÚDO DOS POP-UPS */
+
+    const projectDetails = {
+      bradesco: {
+        label: "01 / Bradesco / Comunicação financeira",
+        title: "Comunicação que aprende com o caminho",
+        description: `
+          <p>
+            <strong>O contexto</strong>
+            Comunicação para uma marca financeira em diferentes jornadas e pontos de contato, conectando necessidades do público a objetivos de negócio.
+          </p>
+          <p>
+            <strong>Minha atuação</strong>
+            Redação de campanhas, réguas de comunicação, landing pages e roteiros, em colaboração com equipes de marketing, produto, design e tecnologia.
+          </p>
+          <p>
+            <strong>O olhar estratégico</strong>
+            Segmentação, hierarquia da informação, adequação da mensagem ao canal e análise de indicadores para identificar oportunidades de melhoria.
+          </p>
+        `,
+        tags: ["Bradesco", "CRM", "Campanhas", "Performance"],
+        url: "https://www.behance.net/thaisbassocc",
+        linkLabel: "Ver portfólio no Behance ↗",
+        color: "blue"
+      },
+
+      santander: {
+        label: "02 / Santander / Campanhas integradas",
+        title: "Uma mensagem, vários pontos de contato",
+        description: `
+          <p>
+            <strong>O contexto</strong>
+            Campanhas e comunicação digital para diferentes públicos, canais e objetivos de negócio.
+          </p>
+          <p>
+            <strong>Minha atuação</strong>
+            Desenvolvimento e desdobramento de textos para campanhas, jornadas de comunicação e peças digitais, respeitando as características e limitações de cada formato.
+          </p>
+          <p>
+            <strong>O olhar estratégico</strong>
+            Coerência entre a ideia central, a mensagem e o momento de contato com o público, sem tratar todos os canais como se fossem iguais.
+          </p>
+        `,
+        tags: ["Santander", "Campanhas", "CRM", "Conteúdo"],
+        url: "https://www.behance.net/thaisbassocc",
+        linkLabel: "Ver portfólio no Behance ↗",
+        color: "red"
+      },
+
+      petz: {
+        label: "03 / Petz / Marca e conteúdo",
+        title: "Conteúdo com voz própria",
+        description: `
+          <p>
+            <strong>O contexto</strong>
+            Comunicação de marca, campanhas e conteúdo para diferentes canais e pontos de contato.
+          </p>
+          <p>
+            <strong>Minha atuação</strong>
+            Criação e adaptação de textos para campanhas e iniciativas de marca, considerando linguagem, público e objetivo de comunicação.
+          </p>
+          <p>
+            <strong>O olhar estratégico</strong>
+            Encontrar o equilíbrio entre personalidade de marca, clareza da mensagem e necessidades reais de quem recebe a comunicação.
+          </p>
+        `,
+        tags: ["Petz", "Marca", "Campanhas", "Conteúdo"],
+        url: "https://www.behance.net/thaisbassocc",
+        linkLabel: "Ver portfólio no Behance ↗",
+        color: "yellow"
+      },
+
+      ia: {
+        label: "04 / IA / Pesquisa e experimentação",
+        title: "Ideias fora do Ctrl+C",
+        description: `
+          <p>
+            <strong>O contexto</strong>
+            Experimentação com inteligência artificial aplicada à comunicação, à pesquisa e ao processo criativo.
+          </p>
+          <p>
+            <strong>Minha atuação</strong>
+            Uso de ferramentas de IA para pesquisa, prototipagem, produção, revisão de conteúdo e exploração de novas possibilidades de trabalho.
+          </p>
+          <p>
+            <strong>O olhar estratégico</strong>
+            Tecnologia como apoio para ampliar repertório e testar caminhos, mantendo a intenção criativa, o pensamento crítico e a responsabilidade editorial no centro do processo.
+          </p>
+        `,
+        tags: ["Inteligência artificial", "Criatividade", "Pesquisa", "Tecnologia"],
+        url: "https://thaisbasso.substack.com/",
+        linkLabel: "Ler meus textos no Substack ↗",
+        color: "black"
+      }
+    };
+
+
+    /* COMPORTAMENTO DAS JANELAS */
+
+    const projectModal = document.getElementById("projectModal");
+    const modalPanel = document.getElementById("projectModalPanel");
+    const modalClose = document.getElementById("modalClose");
+    const modalLabel = document.getElementById("modalLabel");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalTags = document.getElementById("modalTags");
+    const modalLink = document.getElementById("modalLink");
+
+    let lastFocusedCard = null;
+
+    function openProject(card) {
+      const project = projectDetails[card.dataset.project];
+
+      if (!project) return;
+
+      lastFocusedCard = card;
+
+      modalLabel.textContent = project.label;
+      modalTitle.textContent = project.title;
+      modalDescription.innerHTML = project.description;
+      modalLink.href = project.url;
+      modalLink.textContent = project.linkLabel;
+
+      modalTags.replaceChildren();
+
+      project.tags.forEach((tagText) => {
+        const tag = document.createElement("span");
+        tag.textContent = tagText;
+        modalTags.appendChild(tag);
+      });
+
+      const titleColors = {
+        blue: "var(--blue)",
+        red: "var(--red)",
+        yellow: "var(--ink)",
+        black: "var(--ink)"
+      };
+
+      modalTitle.style.color = titleColors[project.color] || "var(--ink)";
+
+      projectModal.classList.add("is-open");
+      projectModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+
+      modalClose.focus();
+    }
+
+    function closeProject() {
+      if (!projectModal.classList.contains("is-open")) return;
+
+      projectModal.classList.remove("is-open");
+      projectModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+
+      if (lastFocusedCard) {
+        lastFocusedCard.focus();
+      }
+    }
+
+    document.querySelectorAll(".work-card[data-project]").forEach((card) => {
+      card.addEventListener("click", () => {
+        openProject(card);
+      });
+    });
+
+    modalClose.addEventListener("click", closeProject);
+
+    projectModal.addEventListener("click", (event) => {
+      if (event.target === projectModal) {
+        closeProject();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        projectModal.classList.contains("is-open")
+      ) {
+        closeProject();
+      }
+    });
+
+    /* Impede que o foco saia da janela enquanto ela estiver aberta. */
+
+    modalPanel.addEventListener("keydown", (event) => {
+      if (event.key !== "Tab") return;
+
+      const focusable = modalPanel.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
   </script>
 </body>
 </html>
