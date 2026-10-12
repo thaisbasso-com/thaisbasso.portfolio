@@ -3,1038 +3,1193 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#F7F5EF">
-
-  <title>Thais Basso — Redação, Estratégia &amp; Criatividade</title>
-
-  <meta
-    name="description"
-    content="Portfólio profissional de Thais Basso. Redação sênior, estratégia de comunicação, campanhas, CRM, conteúdo e marketing de performance."
-  >
-
-  <meta property="og:title" content="Thais Basso — Redação, Estratégia & Criatividade">
-  <meta
-    property="og:description"
-    content="Ideias, palavras e estratégia para problemas de comunicação do mundo real."
-  >
-  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="description" content="Portfólio de Thais Basso — redação, estratégia, campanhas, CRM e criatividade.">
+  <title>Thais Basso — Redação, ideias & outras obsessões</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --paper: #F7F5EF;
-      --paper-dark: #EDEAE1;
-      --ink: #25251F;
-      --muted: #77746A;
-      --line: #D8D4C9;
-      --accent: #C7ED83;
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
+      --paper: #f4f0e8;
+      --ink: #171717;
+      --blue: #244bff;
+      --red: #ff4538;
+      --yellow: #f9df42;
+      --green: #c7f36b;
+      --line: 2px solid var(--ink);
       --mono: "DM Mono", monospace;
-      --max-width: 1120px;
-      --gutter: 32px;
+      --display: "Archivo Black", Impact, sans-serif;
+      --body: "Space Grotesk", sans-serif;
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 92px;
+      scroll-padding-top: 90px;
     }
 
     body {
       margin: 0;
-      background: var(--paper);
       color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      background: var(--paper);
+      font-family: var(--body);
+      overflow-x: hidden;
     }
 
-    body,
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
+    a { color: inherit; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-    a:focus-visible {
-      outline: 2px solid var(--ink);
+    a:focus-visible, button:focus-visible {
+      outline: 3px dashed var(--blue);
       outline-offset: 5px;
     }
 
     ::selection {
-      color: var(--ink);
-      background: var(--accent);
+      color: var(--paper);
+      background: var(--blue);
     }
 
-    .container {
-      width: min(var(--max-width), calc(100% - var(--gutter) * 2));
-      margin-inline: auto;
+    .wrap {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 0 5%;
     }
 
     .mono {
       font-family: var(--mono);
-      font-size: 10px;
-      line-height: 1.7;
+      font-size: 11px;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
       letter-spacing: .09em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      flex: 0 0 9px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+
+    .section {
+      padding: 100px 0;
+      border-top: var(--line);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+
+    .section-heading h2 {
+      margin: 12px 0 0;
+      font: clamp(42px, 7vw, 94px)/.88 var(--display);
+      letter-spacing: -.065em;
       text-transform: uppercase;
     }
 
-    .muted {
-      color: var(--muted);
+    .section-heading p {
+      max-width: 260px;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
-    .serif {
-      font-family: var(--serif);
-      font-weight: 500;
-    }
+    /* HEADER */
 
-    .topbar {
+    header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(247, 245, 239, .95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
+      z-index: 50;
+      background: var(--paper);
+      border-bottom: var(--line);
     }
 
     .nav {
-      min-height: 70px;
+      min-height: 68px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
     }
 
     .wordmark {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -.055em;
+      font: 24px/.9 var(--display);
+      letter-spacing: -.07em;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
-    .wordmark span {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-style: italic;
-    }
+    .wordmark span { color: var(--blue); }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
-      font-size: 12px;
+      gap: 22px;
     }
 
-    .nav-links a,
-    .inline-link,
-    .footer a {
-      text-underline-offset: 4px;
-      text-decoration-thickness: 1px;
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      text-decoration: none;
     }
 
-    .nav-links a:hover,
-    .inline-link:hover,
-    .footer a:hover {
-      text-decoration: underline;
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-cta {
+      padding: 11px 14px;
+      background: var(--yellow);
+      border: var(--line);
+      box-shadow: 3px 3px 0 var(--ink);
+      transition: transform .15s, box-shadow .15s;
     }
 
-    /* CAPA */
+    .nav-cta:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--ink);
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 9px 12px;
+      border: var(--line);
+      background: transparent;
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    /* HERO */
 
     .hero {
-      padding-top: 86px;
-      padding-bottom: 78px;
+      padding: 55px 0 45px;
+      position: relative;
     }
 
-    .hero-meta {
+    .hero-top {
       display: flex;
       justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 30px;
-    }
-
-    .hero-kicker {
-      display: flex;
       align-items: center;
-      gap: 9px;
-    }
-
-    .asterisk {
-      color: #678D35;
-      font-size: 19px;
-      line-height: 1;
-    }
-
-    .hero h1 {
-      max-width: 1060px;
-      margin: 0;
-      font-size: clamp(49px, 8.3vw, 104px);
-      line-height: .99;
-      letter-spacing: -.078em;
-      font-weight: 500;
-    }
-
-    .hero h1 em {
-      font-family: var(--serif);
-      font-weight: 500;
-      letter-spacing: -.065em;
-    }
-
-    .hero-bottom {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: end;
-      gap: 44px;
-      margin-top: 42px;
-    }
-
-    .hero-description {
-      max-width: 590px;
-      margin: 0;
-      font-size: clamp(16px, 1.8vw, 19px);
-      line-height: 1.8;
-    }
-
-    .hero-description strong {
-      font-weight: 600;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       gap: 20px;
-      padding: 15px 18px;
-      background: var(--ink);
-      color: var(--paper);
-      border: 1px solid var(--ink);
-      font-size: 12px;
-      font-weight: 600;
-      transition: color .2s, background .2s;
+      margin-bottom: 28px;
+    }
+
+    .hero-top .mono:last-child { text-align: right; }
+
+    .hero-title {
+      position: relative;
+      margin: 0;
+      font: clamp(72px, 14.6vw, 205px)/.76 var(--display);
+      letter-spacing: -.105em;
+      text-transform: uppercase;
+    }
+
+    .hero-title .line {
+      display: block;
       white-space: nowrap;
     }
 
-    .button:hover {
-      background: var(--accent);
-      color: var(--ink);
+    .hero-title .blue { color: var(--blue); }
+
+    .hero-title .outline {
+      color: transparent;
+      -webkit-text-stroke: 2px var(--ink);
     }
 
-    .hero-index {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding-top: 32px;
-      margin-top: 64px;
-      border-top: 1px solid var(--line);
-    }
-
-    .hero-index p {
-      margin: 0;
-    }
-
-    /* ESTRUTURA DAS SEÇÕES */
-
-    .section {
-      padding-block: 76px;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-header {
+    .hero-middle {
       display: grid;
-      grid-template-columns: minmax(140px, .8fr) minmax(0, 2fr);
-      gap: 36px;
-      margin-bottom: 42px;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: end;
+      margin-top: 44px;
     }
 
-    .section-label {
-      padding-top: 9px;
-    }
-
-    .section-title {
-      max-width: 720px;
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(34px, 5vw, 57px);
-      font-weight: 500;
-      line-height: 1.1;
-      letter-spacing: -.05em;
-    }
-
-    .section-intro {
-      max-width: 600px;
-      margin: 17px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    /* CASES */
-
-    .case-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .case {
-      display: grid;
-      grid-template-columns: 72px minmax(0, 1fr) minmax(170px, .55fr);
-      gap: 24px;
-      padding: 30px 0;
-      border-bottom: 1px solid var(--line);
-      align-items: start;
-    }
-
-    .case-number {
-      padding-top: 8px;
-      color: var(--muted);
-    }
-
-    .case h3 {
-      margin: 0;
-      max-width: 580px;
-      font-size: clamp(24px, 3.3vw, 38px);
-      font-weight: 500;
-      line-height: 1.17;
-      letter-spacing: -.055em;
-    }
-
-    .case h3 em {
-      font-family: var(--serif);
-      font-weight: 500;
-    }
-
-    .case-description {
-      max-width: 580px;
-      margin: 14px 0 0;
-      font-size: 14px;
-      line-height: 1.9;
-      color: #5D5A51;
-    }
-
-    .case-details {
-      padding-top: 5px;
-    }
-
-    .case-details .mono {
-      color: var(--muted);
-    }
-
-    .case-details p {
-      margin: 9px 0 0;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .case-note {
-      margin-top: 22px;
-      max-width: 700px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
-    /* MANIFESTO */
-
-    .manifesto {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 64px;
-      align-items: start;
-    }
-
-    .manifesto-quote {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(36px, 5.3vw, 62px);
-      line-height: 1.12;
-      letter-spacing: -.055em;
-    }
-
-    .manifesto-quote em {
-      color: #77746A;
-    }
-
-    .manifesto-copy p {
-      margin: 0 0 19px;
-      font-size: 14px;
-      line-height: 1.95;
-    }
-
-    .manifesto-copy p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* COMPETÊNCIAS */
-
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .skill {
-      min-height: 150px;
-      padding: 22px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .skill .mono {
-      color: var(--muted);
-    }
-
-    .skill h3 {
-      margin: 23px 0 9px;
-      font-size: 20px;
-      font-weight: 500;
-      letter-spacing: -.035em;
-    }
-
-    .skill p {
-      max-width: 390px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    /* CONTEÚDO AUTORAL */
-
-    .editorial-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      align-items: center;
-      gap: 32px;
-      padding: 32px;
-      background: var(--paper-dark);
-    }
-
-    .editorial-card h3 {
+    .hero-intro {
       max-width: 620px;
-      margin: 12px 0;
-      font-family: var(--serif);
-      font-size: clamp(28px, 4vw, 43px);
-      font-weight: 500;
-      line-height: 1.15;
+      font-size: clamp(21px, 3.2vw, 39px);
+      line-height: 1.05;
       letter-spacing: -.045em;
     }
 
-    .editorial-card p {
-      max-width: 550px;
-      margin: 0;
-      color: #625F55;
-      font-size: 13px;
-      line-height: 1.9;
+    .hero-intro strong {
+      background: var(--yellow);
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      padding: 0 4px;
+      font-weight: 700;
     }
 
-    .editorial-card .button {
-      align-self: center;
+    .hero-side {
+      justify-self: end;
+      max-width: 320px;
     }
 
-    /* CONTATO */
-
-    .contact {
-      padding-block: 90px;
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .contact h2 {
-      max-width: 900px;
-      margin: 24px 0 28px;
-      font-size: clamp(48px, 8.7vw, 96px);
-      font-weight: 500;
-      line-height: .99;
-      letter-spacing: -.075em;
-    }
-
-    .contact h2 em {
-      font-family: var(--serif);
-      font-weight: 500;
-    }
-
-    .contact-description {
-      max-width: 490px;
-      margin: 0 0 28px;
-      color: #D0CEC5;
+    .hero-side p {
       font-size: 14px;
-      line-height: 1.9;
+      line-height: 1.55;
     }
 
-    .contact .button {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--ink);
+    .arrow-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
     }
 
-    .contact .button:hover {
+    .arrow-link:hover { color: var(--blue); }
+
+    .arrow-link .arrow {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border: var(--line);
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .sticker {
+      position: absolute;
+      top: 45%;
+      right: 7%;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: clamp(85px, 12vw, 155px);
+      aspect-ratio: 1;
+      padding: 12px;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      background: var(--red);
+      color: white;
+      font: clamp(11px, 1.5vw, 18px)/1.05 var(--display);
+      text-align: center;
+      text-transform: uppercase;
+      transform: rotate(13deg);
+    }
+
+    /* MOVING TICKER */
+
+    .ticker {
+      overflow: hidden;
+      padding: 14px 0;
+      color: var(--paper);
+      background: var(--blue);
+      border-top: var(--line);
+      border-bottom: var(--line);
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+
+    .ticker-item {
+      padding-right: 28px;
+      font: clamp(20px, 3vw, 35px)/1 var(--display);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .ticker-item span {
+      padding: 0 14px;
+      color: var(--yellow);
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+    /* INTRO / SERVICES */
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .intro-copy {
+      font-size: clamp(27px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -.05em;
+    }
+
+    .intro-copy em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .intro-note {
+      max-width: 450px;
+      margin: 20px 0;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .service-list {
+      border-top: var(--line);
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 15px;
+      padding: 20px 0;
+      border-bottom: var(--line);
+    }
+
+    .service-number {
+      font: 12px var(--mono);
+      color: var(--blue);
+    }
+
+    .service h3 {
+      margin: 0 0 7px;
+      font-size: 20px;
+      letter-spacing: -.04em;
+    }
+
+    .service p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* PORTFOLIO */
+
+    #trabalhos { background: var(--yellow); }
+
+    .work-intro {
+      max-width: 610px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .work-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      border: var(--line);
       background: var(--paper);
-      border-color: var(--paper);
+      box-shadow: 6px 6px 0 var(--ink);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .work-card:hover {
+      transform: translate(3px, 3px);
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    .work-art {
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 22px;
+      overflow: hidden;
+      border-bottom: var(--line);
+      position: relative;
+    }
+
+    .work-art::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      right: -55px;
+      bottom: -80px;
+      box-shadow: 0 0 0 15px transparent, 0 0 0 17px currentColor,
+        0 0 0 32px transparent, 0 0 0 34px currentColor;
+      opacity: .7;
+    }
+
+    .art-blue {
+      color: white;
+      background: var(--blue);
+    }
+
+    .art-red {
+      color: white;
+      background: var(--red);
+    }
+
+    .art-yellow {
+      color: var(--ink);
+      background: var(--yellow);
+    }
+
+    .art-black {
+      color: var(--paper);
+      background: var(--ink);
+    }
+
+    .art-label {
+      position: relative;
+      z-index: 1;
+      font: 10px var(--mono);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .art-big {
+      position: relative;
+      z-index: 1;
+      margin: 24px 0 0;
+      font: clamp(39px, 6.5vw, 86px)/.82 var(--display);
+      letter-spacing: -.08em;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .art-big.small { font-size: clamp(30px, 4.8vw, 60px); }
+
+    .work-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 23px;
+    }
+
+    .work-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      padding: 5px 8px;
+      border: 1px solid var(--ink);
+      font: 9px var(--mono);
+      text-transform: uppercase;
+    }
+
+    .work-content h3 {
+      margin: 0 0 12px;
+      font: clamp(24px, 3vw, 36px)/.98 var(--display);
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+
+    .work-content p {
+      margin: 0 0 20px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .work-link {
+      margin-top: auto;
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      text-underline-offset: 4px;
+    }
+
+    .work-link:hover { color: var(--blue); }
+
+    .work-disclaimer {
+      margin-top: 35px;
+      padding-top: 18px;
+      border-top: var(--line);
+      font: 11px/1.6 var(--mono);
+      text-transform: uppercase;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-poster {
+      position: relative;
+      min-height: 390px;
+      padding: 25px;
+      border: var(--line);
+      background: var(--red);
+      color: white;
+      overflow: hidden;
+      transform: rotate(-1deg);
+    }
+
+    .about-poster .poster-small {
+      font: 11px var(--mono);
+      text-transform: uppercase;
+    }
+
+    .about-poster .poster-big {
+      margin: 45px 0 0;
+      font: clamp(48px, 7vw, 92px)/.8 var(--display);
+      letter-spacing: -.09em;
+      text-transform: uppercase;
+    }
+
+    .about-poster .poster-round {
+      position: absolute;
+      right: -35px;
+      bottom: -30px;
+      width: 170px;
+      height: 170px;
+      border: 2px solid white;
+      border-radius: 50%;
+      box-shadow: 0 0 0 12px var(--red), 0 0 0 14px white,
+        0 0 0 27px var(--red), 0 0 0 29px white;
+    }
+
+    .about-copy {
+      font-size: clamp(20px, 2.7vw, 31px);
+      line-height: 1.22;
+      letter-spacing: -.04em;
+    }
+
+    .about-copy p { margin: 0 0 24px; }
+
+    .about-copy .highlight {
+      padding: 0 4px;
+      color: var(--ink);
+      background: var(--green);
+    }
+
+    .about-small {
+      max-width: 520px;
+      font-size: 14px;
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+
+    /* EXPERIENCE */
+
+    #trajetoria { background: var(--blue); color: white; }
+
+    #trajetoria .eyebrow::before { background: var(--yellow); }
+
+    .timeline { border-top: 2px solid white; }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 30px;
+      padding: 25px 0;
+      border-bottom: 2px solid white;
+    }
+
+    .timeline-date {
+      font: 11px/1.5 var(--mono);
+      text-transform: uppercase;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 8px;
+      font: clamp(24px, 3.4vw, 38px)/1 var(--display);
+      letter-spacing: -.05em;
+      text-transform: uppercase;
+    }
+
+    .timeline-item p {
+      max-width: 650px;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .timeline-note {
+      margin-top: 25px;
+      font: 10px/1.6 var(--mono);
+      opacity: .8;
+      text-transform: uppercase;
+    }
+
+    /* IDEAS */
+
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .idea-card {
+      padding: 28px;
+      border: var(--line);
+      background: var(--paper);
+    }
+
+    .idea-card:first-child { background: var(--green); }
+    .idea-card:last-child { background: var(--red); color: white; }
+
+    .idea-card .idea-number {
+      font: 11px var(--mono);
+    }
+
+    .idea-card h3 {
+      margin: 35px 0 14px;
+      font: clamp(32px, 5vw, 57px)/.9 var(--display);
+      letter-spacing: -.06em;
+      text-transform: uppercase;
+    }
+
+    .idea-card p {
+      max-width: 480px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .idea-card a {
+      display: inline-block;
+      margin-top: 12px;
+      font: 11px var(--mono);
+      text-transform: uppercase;
+      text-underline-offset: 4px;
+    }
+
+    /* CONTACT */
+
+    #contato {
+      padding: 100px 0 50px;
+      background: var(--red);
+      color: white;
+    }
+
+    #contato .eyebrow::before { background: var(--yellow); }
+
+    .contact-title {
+      margin: 35px 0;
+      font: clamp(55px, 12vw, 165px)/.78 var(--display);
+      letter-spacing: -.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-title span {
+      display: block;
+      color: var(--yellow);
+    }
+
+    .contact-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      padding-top: 30px;
+      border-top: 2px solid white;
+    }
+
+    .contact-bottom p {
+      max-width: 440px;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 46px;
-      padding-top: 22px;
-      border-top: 1px solid #4A4942;
-      font-size: 12px;
+      gap: 10px;
     }
 
     .contact-links a {
-      text-underline-offset: 4px;
+      padding: 12px 15px;
+      border: 2px solid white;
+      color: white;
+      font: 11px var(--mono);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .15s, color .15s;
     }
 
     .contact-links a:hover {
-      text-decoration: underline;
+      color: var(--ink);
+      background: var(--yellow);
+      border-color: var(--yellow);
     }
 
-    /* RODAPÉ */
-
-    .footer {
-      padding-block: 20px;
-      background: var(--ink);
-      color: #B7B4AA;
-      border-top: 1px solid #45443D;
-    }
-
-    .footer-inner {
+    footer {
+      padding: 18px 5%;
+      color: var(--ink);
+      background: var(--paper);
       display: flex;
       justify-content: space-between;
-      align-items: center;
       gap: 20px;
+      font: 10px/1.5 var(--mono);
+      text-transform: uppercase;
     }
 
-    .footer p {
-      margin: 0;
+    /* RESPONSIVE */
+
+    @media (min-width: 1500px) {
+      .hero-title { font-size: 205px; }
     }
 
-    /* RESPONSIVIDADE */
+    @media (max-width: 800px) {
+      .wrap { padding: 0 6%; }
+      .section { padding: 70px 0; }
 
-    @media (max-width: 760px) {
-      :root {
-        --gutter: 22px;
-      }
-
-      .nav {
-        min-height: 64px;
-      }
+      .nav { min-height: 62px; }
+      .menu-toggle { display: block; }
 
       .nav-links {
-        gap: 15px;
-        font-size: 11px;
-      }
-
-      .hero {
-        padding-top: 60px;
-        padding-bottom: 55px;
-      }
-
-      .hero-meta {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 22px 6%;
+        background: var(--paper);
+        border-bottom: var(--line);
+        align-items: stretch;
         flex-direction: column;
-        gap: 8px;
+        gap: 20px;
       }
 
-      .hero-bottom {
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 12px; }
+      .nav-cta { align-self: flex-start; }
+
+      .hero { padding-top: 38px; }
+      .hero-title { font-size: clamp(65px, 15vw, 115px); }
+      .hero-middle { grid-template-columns: 1fr; gap: 15px; }
+      .hero-side { justify-self: start; }
+      .sticker { top: 37%; right: 7%; }
+
+      .intro-grid, .about-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
-        margin-top: 28px;
+        gap: 35px;
       }
 
-      .hero-bottom .button {
-        justify-self: start;
-      }
-
-      .hero-index {
-        margin-top: 42px;
-        padding-top: 22px;
-      }
-
-      .section {
-        padding-block: 55px;
-      }
-
-      .section-header {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        margin-bottom: 30px;
-      }
-
-      .case {
-        grid-template-columns: 35px minmax(0, 1fr);
-        gap: 14px;
-        padding-block: 25px;
-      }
-
-      .case-details {
-        grid-column: 2;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 7px 16px;
-        align-items: baseline;
-      }
-
-      .case-details p {
-        margin: 0;
-      }
-
-      .case-details .mono {
-        margin-top: 4px;
-      }
-
-      .manifesto {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .skill {
-        min-height: 140px;
-        padding: 16px;
-      }
-
-      .skill h3 {
-        font-size: 17px;
-      }
-
-      .editorial-card {
-        grid-template-columns: 1fr;
-        padding: 23px;
-        gap: 24px;
-      }
-
-      .editorial-card .button {
-        justify-self: start;
-      }
-
-      .contact {
-        padding-block: 65px;
-      }
-
-      .footer-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
-      }
+      .about-poster { min-height: 310px; }
+      .work-art { min-height: 190px; }
+      .timeline-item { grid-template-columns: 110px 1fr; gap: 18px; }
+      .contact-bottom { align-items: flex-start; flex-direction: column; }
     }
 
-    @media (max-width: 420px) {
-      .nav-links {
-        gap: 11px;
-      }
-
-      .nav-links a {
-        font-size: 10px;
-      }
-
-      .hero h1 {
-        font-size: clamp(44px, 12vw, 54px);
-      }
-
-      .hero-index {
-        flex-direction: column;
-        gap: 9px;
-      }
-
-      .skills {
-        grid-template-columns: 1fr;
-      }
-
-      .skill {
-        min-height: auto;
-        padding: 20px;
-      }
-
-      .skill h3 {
-        margin-top: 14px;
-      }
-
-      .contact-links {
-        gap: 17px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
+    @media (max-width: 540px) {
+      .hero-top { align-items: flex-start; }
+      .hero-top .mono { font-size: 9px; }
+      .hero-title { font-size: 16vw; }
+      .hero-title .outline { -webkit-text-stroke-width: 1px; }
+      .sticker { top: 39%; right: 5%; width: 78px; font-size: 10px; }
+      .hero-middle { margin-top: 30px; }
+      .section-heading { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .section-heading p { margin-bottom: 0; }
+      .work-grid, .ideas-grid { grid-template-columns: 1fr; }
+      .work-art { min-height: 215px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+      .timeline-date br { display: none; }
+      .contact-title { font-size: 17vw; }
+      footer { flex-direction: column; gap: 7px; }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <nav class="nav wrap" aria-label="Navegação principal">
+      <a class="wordmark" href="#inicio" aria-label="Thais Basso, início">THAIS<span>!</span>BASSO</a>
 
-  <header class="topbar">
-    <nav class="nav container" aria-label="Navegação principal">
-      <a class="wordmark" href="#inicio">
-        THAIS <span>Basso.</span>
-      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">
+        Menu +
+      </button>
 
-      <div class="nav-links">
-        <a href="#trabalho">Trabalhos</a>
+      <div class="nav-links" id="navLinks">
         <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato ↗</a>
+        <a href="#trabalhos">Trabalhos</a>
+        <a href="#trajetoria">Trajetória</a>
+        <a href="#ideias">Fora do expediente</a>
+        <a class="nav-cta" href="#contato">Vamos conversar ↗</a>
       </div>
     </nav>
   </header>
 
   <main>
-
-    <!-- CAPA -->
-
-    <section class="hero container" id="inicio">
-      <div class="hero-meta mono">
-        <div class="hero-kicker">
-          <span class="asterisk">✳</span>
-          REDAÇÃO · ESTRATÉGIA · MARKETING
-        </div>
-
-        <span>PORTFÓLIO PROFISSIONAL</span>
+    <section class="hero wrap" id="inicio">
+      <div class="hero-top">
+        <span class="mono">Portfólio independente<br>São Paulo, Brasil</span>
+        <span class="mono">Redação / Estratégia /<br>Ideias com algum desvio</span>
       </div>
 
-      <h1>
-        Palavras são o começo.
-        <em>O que elas fazem acontecer</em>
-        é o que importa.
+      <h1 class="hero-title">
+        <span class="line">THAIS</span>
+        <span class="line blue">BASSO<span class="outline">®</span></span>
       </h1>
 
-      <div class="hero-bottom">
-        <p class="hero-description">
-          Sou Thais Basso, redatora sênior.
-          Trabalho entre <strong>criatividade, estratégia e performance</strong>
-          para transformar problemas de comunicação em ideias relevantes,
-          mensagens claras e experiências melhores.
-        </p>
+      <div class="sticker">Ideias<br>com<br>intenção!</div>
 
-        <a class="button" href="#trabalho">
-          CONHEÇA MEU TRABALHO <span>↘</span>
-        </a>
-      </div>
-
-      <div class="hero-index mono">
-        <p>01 / Campanhas e marcas</p>
-        <p>02 / CRM e performance</p>
-        <p>03 / Conteúdo e estratégia</p>
-      </div>
-    </section>
-
-    <!-- TRABALHOS -->
-
-    <section class="section" id="trabalho">
-      <div class="container">
-        <header class="section-header">
-          <div class="section-label mono">
-            01 / TRABALHOS SELECIONADOS
-          </div>
-
-          <div>
-            <h2 class="section-title">
-              Briefings, ideias e o trabalho de fazer as duas coisas conversarem.
-            </h2>
-
-            <p class="section-intro">
-              Uma seleção das frentes em que atuei: da construção de campanhas
-              à comunicação de relacionamento, passando por conteúdo,
-              experiência digital e otimização de mensagens.
-            </p>
-          </div>
-        </header>
-
-        <div class="case-list">
-
-          <article class="case">
-            <div class="case-number mono">01</div>
-
-            <div>
-              <h3>Comunicação para <em>Bradesco.</em></h3>
-
-              <p class="case-description">
-                Atuação em redação sênior para campanhas e comunicação
-                de relacionamento. Trabalho com jornadas, landing pages
-                e desdobramentos, conectando objetivos de negócio,
-                contexto de público e hierarquia da informação.
-              </p>
-            </div>
-
-            <div class="case-details">
-              <span class="mono">Frentes de trabalho</span>
-              <p>CRM, campanhas, landing pages, segmentação e performance.</p>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-number mono">02</div>
-
-            <div>
-              <h3>Mensagens com contexto para <em>Santander.</em></h3>
-
-              <p class="case-description">
-                Desenvolvimento de peças de comunicação para diferentes
-                momentos da jornada, com atenção à adequação de linguagem,
-                objetivos da mensagem, restrições de canal e consistência
-                entre os pontos de contato.
-              </p>
-            </div>
-
-            <div class="case-details">
-              <span class="mono">Frentes de trabalho</span>
-              <p>CRM, campanhas, comunicação de produtos e réguas.</p>
-            </div>
-          </article>
-
-          <article class="case">
-            <div class="case-number mono">03</div>
-
-            <div>
-              <h3>Redação e criatividade para <em>Petz.</em></h3>
-
-              <p class="case-description">
-                Experiência com trabalho de comunicação de marca e conteúdo,
-                explorando diferentes necessidades de mensagem, formatos
-                e pontos de contato com o público.
-              </p>
-            </div>
-
-            <div class="case-details">
-              <span class="mono">Frentes de trabalho</span>
-              <p>Redação publicitária, conteúdo e comunicação de marca.</p>
-            </div>
-          </article>
-
+      <div class="hero-middle">
+        <div class="hero-intro">
+          Eu escrevo para marcas que precisam dizer alguma coisa — <strong>e não só ocupar espaço.</strong>
         </div>
 
-        <p class="case-note">
-          Os textos acima descrevem áreas de atuação profissional.
-          Não representam estudos de caso completos nem atribuem resultados
-          específicos a cada marca. Peças, briefings e dados podem ser
-          apresentados mediante autorização de divulgação.
-        </p>
-      </div>
-    </section>
-
-    <!-- SOBRE -->
-
-    <section class="section" id="sobre">
-      <div class="container">
-        <header class="section-header">
-          <div class="section-label mono">02 / JEITO DE TRABALHAR</div>
-
-          <div>
-            <h2 class="section-title">
-              A frase certa ajuda. Entender o problema ajuda muito mais.
-            </h2>
-          </div>
-        </header>
-
-        <div class="manifesto">
-          <blockquote class="manifesto-quote">
-            Gosto de boas ideias.
-            Gosto ainda mais de descobrir
-            <em>por que elas deveriam existir.</em>
-          </blockquote>
-
-          <div class="manifesto-copy">
-            <p>
-              Minha atuação combina redação, pensamento estratégico
-              e atenção ao comportamento das pessoas. Antes de procurar
-              uma frase brilhante, prefiro entender o que precisa ser dito,
-              para quem, em qual contexto e com qual objetivo.
-            </p>
-
-            <p>
-              Trabalho com diferentes formatos e etapas da comunicação:
-              campanhas, roteiros, landing pages, réguas de relacionamento
-              e conteúdo digital. Também considero os dados de desempenho,
-              os testes e os aprendizados parte do processo criativo.
-            </p>
-
-            <p>
-              Tenho familiaridade com Salesforce e com o trabalho integrado
-              entre comunicação, marketing, produto, design e tecnologia.
-              Acredito em texto bem escrito, estratégia bem fundamentada
-              e reuniões que poderiam ter sido um parágrafo.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPETÊNCIAS -->
-
-    <section class="section" id="competencias">
-      <div class="container">
-        <header class="section-header">
-          <div class="section-label mono">03 / ESPECIALIDADES</div>
-
-          <div>
-            <h2 class="section-title">
-              Da primeira pergunta à última revisão.
-            </h2>
-
-            <p class="section-intro">
-              Competências que se complementam para resolver problemas
-              de comunicação em diferentes canais e contextos.
-            </p>
-          </div>
-        </header>
-
-        <div class="skills">
-          <article class="skill">
-            <span class="mono">01 / CONCEITO</span>
-            <h3>Redação e campanhas</h3>
-            <p>
-              Conceitos criativos, headlines, textos publicitários,
-              roteiros e desdobramentos de campanha.
-            </p>
-          </article>
-
-          <article class="skill">
-            <span class="mono">02 / RELACIONAMENTO</span>
-            <h3>CRM e jornadas</h3>
-            <p>
-              Réguas de comunicação, e-mails, notificações, segmentação
-              e consistência entre pontos de contato.
-            </p>
-          </article>
-
-          <article class="skill">
-            <span class="mono">03 / EXPERIÊNCIA</span>
-            <h3>Conteúdo e canais digitais</h3>
-            <p>
-              Landing pages, conteúdo digital, hierarquia da informação,
-              clareza e adequação da mensagem ao contexto.
-            </p>
-          </article>
-
-          <article class="skill">
-            <span class="mono">04 / APRENDIZADO</span>
-            <h3>Performance e experimentação</h3>
-            <p>
-              Leitura de indicadores, testes A/B e revisão de mensagens
-              a partir de hipóteses e aprendizados.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTEÚDO AUTORAL -->
-
-    <section class="section" id="publicacoes">
-      <div class="container">
-        <header class="section-header">
-          <div class="section-label mono">04 / FORA DO BRIEFING</div>
-
-          <div>
-            <h2 class="section-title">
-              Também escrevo quando ninguém pediu um CTA.
-            </h2>
-          </div>
-        </header>
-
-        <div class="editorial-card">
-          <div>
-            <span class="mono">ESCRITA AUTORAL · NEWSLETTER</span>
-
-            <h3>Ideias sobre marketing, criatividade, tecnologia e cultura digital.</h3>
-
-            <p>
-              Um espaço para investigar o mercado, questionar fórmulas
-              prontas e organizar pensamentos que nem sempre cabem
-              no limite de caracteres de uma campanha.
-            </p>
-          </div>
-
-          <a
-            class="button"
-            href="https://thaisbasso.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LER NEWSLETTER <span>↗</span>
+        <div class="hero-side">
+          <span class="eyebrow">Prazer, sou eu</span>
+          <p>
+            Redatora sênior, estrategista de comunicação e curiosa profissional.
+            Trabalho na interseção entre criatividade, comportamento, tecnologia e resultado.
+          </p>
+          <a class="arrow-link" href="#trabalhos">
+            Ver trabalhos <span class="arrow">↘</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- CONTATO -->
+    <div class="ticker" aria-label="Redação, estratégia, criatividade e performance">
+      <div class="ticker-track" aria-hidden="true">
+        <div class="ticker-item">Redação <span>✳</span> Estratégia <span>✳</span> Criatividade <span>✳</span> Performance <span>✳</span> Cultura <span>✳</span></div>
+        <div class="ticker-item">Redação <span>✳</span> Estratégia <span>✳</span> Criatividade <span>✳</span> Performance <span>✳</span> Cultura <span>✳</span></div>
+      </div>
+    </div>
 
-    <section class="contact" id="contato">
-      <div class="container">
-        <span class="mono">05 / CONVERSAS PROFISSIONAIS</span>
+    <section class="section wrap" id="sobre">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Manifesto em construção</span>
+          <h2>O que<br>eu faço.</h2>
+        </div>
+        <p>Palavras são trabalho. Curiosidade também. E ideia boa não costuma vir de briefing preenchido no automático.</p>
+      </div>
 
-        <h2>
-          Vamos encontrar
-          <em>as palavras certas?</em>
-        </h2>
+      <div class="intro-grid">
+        <div>
+          <div class="intro-copy">
+            Entre o que uma marca quer dizer e o que as pessoas realmente querem ouvir, existe um <em>espaço interessante.</em>
+          </div>
+          <p class="intro-note">
+            É ali que eu gosto de trabalhar: entendendo o problema, encontrando o ângulo e transformando estratégia em comunicação que faz sentido para gente de verdade.
+          </p>
+        </div>
 
-        <p class="contact-description">
-          Para oportunidades profissionais, projetos de comunicação
-          e conversas sobre redação, estratégia e marketing.
-        </p>
+        <div class="service-list">
+          <article class="service">
+            <span class="service-number">01/</span>
+            <div>
+              <h3>Campanhas & conceitos</h3>
+              <p>Ideias centrais, desdobramentos criativos, textos de campanha e narrativas que funcionam em diferentes canais.</p>
+            </div>
+          </article>
 
-        <a
-          class="button"
-          href="https://www.linkedin.com/in/cc-thais-basso/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CONECTE-SE PELO LINKEDIN <span>↗</span>
-        </a>
+          <article class="service">
+            <span class="service-number">02/</span>
+            <div>
+              <h3>CRM & jornadas</h3>
+              <p>Réguas de comunicação, e-mails, push, mensagens, landing pages e conteúdo pensado para cada etapa da relação.</p>
+            </div>
+          </article>
 
-        <div class="contact-links">
-          <a
-            href="https://www.linkedin.com/in/cc-thais-basso/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >LinkedIn ↗</a>
+          <article class="service">
+            <span class="service-number">03/</span>
+            <div>
+              <h3>Estratégia & performance</h3>
+              <p>Trabalho orientado por contexto, comportamento, dados de campanha e experimentação — sem confundir métrica com ideia.</p>
+            </div>
+          </article>
 
-          <a
-            href="https://www.behance.net/thaisbassocc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Behance ↗</a>
-
-          <a
-            href="https://thaisbasso.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Newsletter ↗</a>
+          <article class="service">
+            <span class="service-number">04/</span>
+            <div>
+              <h3>Conteúdo & tecnologia</h3>
+              <p>Pesquisa, experimentação com IA e novas formas de tirar ideias do papel sem terceirizar o pensamento para a ferramenta.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <section class="section" id="trabalhos">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Arquivo de coisas feitas</span>
+            <h2>Trabalho<br>de verdade.</h2>
+          </div>
+          <p>Campanhas, marcas, conteúdo e comunicação. O que está aqui é uma seleção — não uma tentativa de colocar a carreira inteira num carrossel.</p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-art art-blue">
+              <span class="art-label">01 / Comunicação financeira</span>
+              <div class="art-big">BRADESCO<br>EM FOCO.</div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="tag">Bradesco</span>
+                <span class="tag">CRM</span>
+                <span class="tag">Performance</span>
+              </div>
+              <h3>Comunicação que aprende com o caminho</h3>
+              <p>
+                Experiência com jornadas, réguas de comunicação, campanhas e landing pages. Trabalho de texto conectado à segmentação, à hierarquia de informação e à leitura de indicadores.
+              </p>
+              <a class="work-link" href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Explorar portfólio ↗</a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-art art-red">
+              <span class="art-label">02 / Campanhas integradas</span>
+              <div class="art-big">SANTANDER<br>EM MOVIMENTO.</div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="tag">Santander</span>
+                <span class="tag">Campanhas</span>
+                <span class="tag">CRM</span>
+              </div>
+              <h3>Uma mensagem, vários pontos de contato</h3>
+              <p>
+                Atuação em campanhas e comunicação para canais digitais, com desdobramentos de texto, jornadas e peças orientadas a objetivos de negócio.
+              </p>
+              <a class="work-link" href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Explorar portfólio ↗</a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-art art-yellow">
+              <span class="art-label">03 / Marca & conteúdo</span>
+              <div class="art-big">PETZ<br>COM PERSONALIDADE.</div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="tag">Petz</span>
+                <span class="tag">Conteúdo</span>
+                <span class="tag">Marca</span>
+              </div>
+              <h3>Conteúdo com voz própria</h3>
+              <p>
+                Experiência com comunicação de marca, campanhas e conteúdo para diferentes formatos e pontos de contato.
+              </p>
+              <a class="work-link" href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Explorar portfólio ↗</a>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-art art-black">
+              <span class="art-label">04 / Pesquisa & experimentação</span>
+              <div class="art-big small">IDEIAS<br>FORA DO<br>CTRL+C.</div>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="tag">IA</span>
+                <span class="tag">Criatividade</span>
+                <span class="tag">Pesquisa</span>
+              </div>
+              <h3>Novas ferramentas, velhas perguntas boas</h3>
+              <p>
+                Exploração de IA aplicada à pesquisa, prototipagem e produção de comunicação, com foco em ampliar possibilidades criativas — não em automatizar o pensamento.
+              </p>
+              <a class="work-link" href="https://thaisbasso.substack.com/" target="_blank" rel="noopener noreferrer">Ler meus textos ↗</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="work-disclaimer">
+          Os cards apresentam áreas de atuação. Para conhecer peças e projetos publicados, consulte o portfólio externo. Materiais restritos ou protegidos por confidencialidade não são reproduzidos aqui.
+        </p>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <div class="about-grid">
+        <div class="about-poster">
+          <span class="poster-small">Uma pessoa, várias abas abertas</span>
+          <div class="poster-big">NÃO<br>É SÓ<br>TEXTO.</div>
+          <div class="poster-round" aria-hidden="true"></div>
+        </div>
+
+        <div>
+          <span class="eyebrow">Quem está por trás das palavras</span>
+          <div class="about-copy">
+            <p>
+              Sou Thais Basso. Gosto de entender por que as pessoas fazem o que fazem — e o que uma marca pode dizer que não pareça ter saído de uma reunião com 47 slides.
+            </p>
+            <p>
+              <span class="highlight">Estratégia sem curiosidade fica burocrática.</span>
+              Criatividade sem contexto fica decorativa. Eu prefiro trabalhar onde as duas se encontram.
+            </p>
+          </div>
+          <p class="about-small">
+            Minha experiência passa por redação publicitária, campanhas, CRM, conteúdo digital e comunicação orientada por dados. Também escrevo sobre marketing, tecnologia, internet e cultura — porque repertório não aparece por geração espontânea.
+          </p>
+          <a class="arrow-link" href="https://www.linkedin.com/in/cc-thais-basso/" target="_blank" rel="noopener noreferrer">
+            Mais sobre minha trajetória <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trajetoria">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Experiência profissional</span>
+            <h2>Já estive<br>por aí.</h2>
+          </div>
+          <p>Marcas, equipes e problemas diferentes. A mesma vontade de encontrar a mensagem certa.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2025 — 2026<br>Redação sênior</div>
+            <div>
+              <h3>Bradesco</h3>
+              <p>
+                Redação para campanhas e jornadas de comunicação, com atuação em CRM, landing pages, roteiros e colaboração com equipes de marketing, produto, design e tecnologia.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2024 — 2025<br>Redação</div>
+            <div>
+              <h3>Santander</h3>
+              <p>
+                Desenvolvimento e desdobramento de campanhas, réguas de comunicação e peças para canais digitais, considerando contexto, formato e objetivo de cada mensagem.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-date">2023 — 2024<br>Redação</div>
+            <div>
+              <h3>Petz</h3>
+              <p>
+                Trabalho com comunicação de marca, campanhas e conteúdo para diferentes canais e momentos da jornada do público.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="timeline-note">
+          Datas e cargos resumidos para apresentação. Ajuste os períodos e títulos conforme a versão final do seu currículo.
+        </p>
+      </div>
+    </section>
+
+    <section class="section wrap" id="ideias">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Fora do expediente, mais ou menos</span>
+          <h2>Outras<br>obsessões.</h2>
+        </div>
+        <p>Porque pensar em comunicação também é prestar atenção no mundo. Infelizmente, o mundo não desliga às 18h.</p>
+      </div>
+
+      <div class="ideas-grid">
+        <article class="idea-card">
+          <span class="idea-number">01 / NEWSLETTER</span>
+          <h3>Internet, marketing e outras coisas.</h3>
+          <p>
+            Textos sobre cultura digital, tecnologia, criatividade e as esquisitices do mercado. Com opinião própria e pouca paciência para jargão vazio.
+          </p>
+          <a href="https://thaisbasso.substack.com/" target="_blank" rel="noopener noreferrer">Ler no Substack ↗</a>
+        </article>
+
+        <article class="idea-card">
+          <span class="idea-number">02 / PROJETOS VISUAIS</span>
+          <h3>Ideias que saem da cabeça.</h3>
+          <p>
+            Uma seleção de trabalhos e experimentações visuais reunidos no meu portfólio. Campanhas, formatos e explorações criativas.
+          </p>
+          <a href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Ver no Behance ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="wrap">
+        <span class="eyebrow">Fim da página, começo da conversa</span>
+
+        <h2 class="contact-title">
+          TEM UMA<br>
+          <span>IDEIA?</span>
+          VAMOS.
+        </h2>
+
+        <div class="contact-bottom">
+          <p>
+            Se você procura alguém para pensar, escrever, questionar o briefing e transformar ideia em comunicação, meus canais estão aqui.
+          </p>
+
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/cc-thais-basso/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Behance ↗</a>
+            <a href="https://thaisbasso.substack.com/" target="_blank" rel="noopener noreferrer">Substack ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="mono">THAIS BASSO © 2026</p>
-      <p class="mono">Feito com intenção. E algumas vírgulas.</p>
-    </div>
+  <footer>
+    <span>© <span id="year"></span> Thais Basso</span>
+    <span>Feito com texto, contexto e algumas ideias tortas.</span>
+    <a href="#inicio">Voltar ao topo ↑</a>
   </footer>
 
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "Fechar −" : "Menu +";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "Menu +";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
