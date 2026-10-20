@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -25,9 +24,7 @@
       --max-width: 1440px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -43,18 +40,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    body.modal-open {
-      overflow: hidden;
-    }
+    body.modal-open { overflow: hidden; }
 
-    a {
-      color: inherit;
-    }
+    a { color: inherit; }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
     a:focus-visible,
     button:focus-visible,
@@ -173,9 +163,7 @@
       transition: opacity .15s;
     }
 
-    .nav-links a:hover {
-      opacity: .55;
-    }
+    .nav-links a:hover { opacity: .55; }
 
     .nav-links .nav-cta {
       padding: 11px 14px;
@@ -231,9 +219,7 @@
       overflow-wrap: anywhere;
     }
 
-    .hero-title .line {
-      display: block;
-    }
+    .hero-title .line { display: block; }
 
     .hero-title .line:last-child {
       text-decoration: underline;
@@ -284,9 +270,7 @@
       text-underline-offset: 5px;
     }
 
-    .arrow-link:hover {
-      opacity: .55;
-    }
+    .arrow-link:hover { opacity: .55; }
 
     .arrow-link .arrow {
       display: inline-grid;
@@ -361,9 +345,7 @@
       line-height: 1.8;
     }
 
-    .service-list {
-      border-top: var(--line-strong);
-    }
+    .service-list { border-top: var(--line-strong); }
 
     .service {
       display: grid;
@@ -394,9 +376,7 @@
 
     /* TRABALHOS */
 
-    #trabalhos {
-      background: #fafafa;
-    }
+    #trabalhos { background: #fafafa; }
 
     .work-intro {
       max-width: 610px;
@@ -464,9 +444,7 @@
       overflow-wrap: anywhere;
     }
 
-    .art-big.small {
-      font-size: clamp(27px, 4.2vw, 54px);
-    }
+    .art-big.small { font-size: clamp(27px, 4.2vw, 54px); }
 
     .work-content {
       display: flex;
@@ -484,370 +462,160 @@
     }
 
     .tag {
-      padding: 5px 7px;
-      border: 1px solid currentColor;
+      padding: 5px 8px;
+      border: 1px solid #d6d6d6;
       font: 500 9px/1.4 var(--mono);
-      text-transform: lowercase;
+      text-transform: uppercase;
     }
 
     .work-content h3 {
-      margin: 0 0 15px;
-      font: 600 clamp(19px, 2.6vw, 29px)/1.16 var(--mono);
-      letter-spacing: -.075em;
+      margin: 0 0 12px;
+      font: 700 clamp(22px, 3vw, 32px)/1.1 var(--mono);
+      letter-spacing: -.07em;
     }
 
     .work-content p {
-      margin: 0 0 24px;
-      font-size: 13px;
+      max-width: 520px;
+      margin: 0 0 25px;
+      color: #444;
+      font-size: 14px;
       line-height: 1.8;
     }
 
-    .work-link {
-      display: inline-block;
+    .work-card:hover .work-content p { color: #ddd; }
+
+    .work-open {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
       margin-top: auto;
-      font: 500 10px/1.5 var(--mono);
-      text-transform: lowercase;
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
-
-    .click-hint {
-      display: inline-block;
-      margin-top: 15px;
-      font: 500 9px/1.5 var(--mono);
-      text-transform: lowercase;
-      color: var(--muted);
-    }
-
-    .work-card:hover .click-hint {
-      color: #ccc;
-    }
-
-    .work-disclaimer {
-      margin-top: 35px;
-      padding-top: 18px;
+      padding-top: 20px;
       border-top: var(--line);
-      font: 500 10px/1.8 var(--mono);
-    }
-
-    /* POP-UPS DOS PROJETOS */
-
-    .project-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, .75);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity .2s, visibility .2s;
-    }
-
-    .project-modal.is-open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-
-    .project-modal-panel {
-      position: relative;
-      width: min(820px, 100%);
-      max-height: min(85vh, 900px);
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      padding: clamp(25px, 5vw, 58px);
-      color: var(--ink);
-      background: white;
-      border: 2px solid var(--ink);
-      box-shadow: 8px 8px 0 white;
-      transform: translateY(14px);
-      transition: transform .2s;
-    }
-
-    .project-modal.is-open .project-modal-panel {
-      transform: translateY(0);
-    }
-
-    .modal-topline {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      padding-bottom: 20px;
-      border-bottom: var(--line-strong);
-    }
-
-    .modal-label {
-      font: 500 10px/1.6 var(--mono);
-      text-transform: lowercase;
-    }
-
-    .modal-close {
-      flex: 0 0 auto;
-      padding: 11px 13px;
-      border: var(--line-strong);
-      background: white;
-      color: var(--ink);
       font: 500 10px var(--mono);
       text-transform: lowercase;
-      cursor: pointer;
     }
 
-    .modal-close:hover {
-      background: var(--ink);
-      color: white;
-    }
-
-    .modal-project-title {
-      margin: 35px 0 25px;
-      font: 700 clamp(31px, 6vw, 70px)/1.04 var(--mono);
-      letter-spacing: -.09em;
-      overflow-wrap: anywhere;
-    }
-
-    .modal-project-description {
-      max-width: 680px;
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .modal-project-description p {
-      margin: 0 0 22px;
-    }
-
-    .modal-project-description strong {
-      display: block;
-      margin-bottom: 7px;
-      font: 600 10px var(--mono);
-      text-transform: lowercase;
-    }
-
-    .modal-project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 25px 0;
-    }
-
-    .modal-project-tags span {
-      padding: 7px 9px;
-      border: 1px solid var(--ink);
-      font: 500 9px var(--mono);
-    }
-
-    .modal-project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 12px;
-      padding: 14px 18px;
-      border: var(--line-strong);
-      background: var(--ink);
-      color: white;
-      font: 500 10px var(--mono);
-      text-decoration: none;
-      text-transform: lowercase;
-      transition: background .15s, color .15s;
-    }
-
-    .modal-project-link:hover {
-      background: white;
-      color: var(--ink);
-    }
-
-    /* SOBRE MIM */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: clamp(35px, 8vw, 100px);
-      align-items: start;
-    }
-
-    .about-poster {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 420px;
-      padding: clamp(22px, 3vw, 32px);
-      border: var(--line-strong);
-      background: white;
-    }
-
-    .about-poster .poster-small {
-      max-width: 300px;
-      font: 500 10px/1.8 var(--mono);
-    }
-
-    .about-poster .poster-big {
-      margin: 65px 0 0;
-      font: 700 clamp(42px, 6vw, 82px)/1.02 var(--mono);
-      letter-spacing: -.11em;
-    }
-
-    .about-copy {
-      margin-top: 25px;
-      font: 500 clamp(19px, 2.6vw, 30px)/1.45 var(--mono);
-      letter-spacing: -.065em;
-    }
-
-    .about-copy p {
-      margin: 0 0 25px;
-    }
-
-    .about-copy .highlight {
-      font-weight: 700;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 5px;
-    }
-
-    .about-small {
-      max-width: 560px;
-      color: #444;
-      font-size: 14px;
-      line-height: 1.9;
-    }
+    .work-card:hover .work-open { border-color: #555; }
 
     /* TRAJETÓRIA */
 
-    #trajetoria {
-      background: var(--ink);
-      color: white;
-    }
-
-    #trajetoria .eyebrow::before {
-      background: white;
-    }
-
-    #trajetoria .section-heading > p {
-      color: #ccc;
-    }
-
     .timeline {
-      border-top: 1px solid #777;
+      border-top: var(--line-strong);
     }
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 30px;
-      padding: 28px 0;
-      border-bottom: 1px solid #777;
+      grid-template-columns: .6fr 1.4fr;
+      gap: 35px;
+      padding: 30px 0;
+      border-bottom: var(--line);
     }
 
     .timeline-date {
-      font: 500 10px/1.8 var(--mono);
-      text-transform: lowercase;
-      color: #ccc;
+      font: 500 11px/1.6 var(--mono);
+      color: var(--muted);
     }
 
-    .timeline-item h3 {
-      margin: 0 0 12px;
-      font: 600 clamp(23px, 3.5vw, 38px)/1.1 var(--mono);
-      letter-spacing: -.08em;
+    .timeline-content h3 {
+      margin: 0 0 8px;
+      font: 700 clamp(19px, 2.5vw, 27px)/1.2 var(--mono);
+      letter-spacing: -.06em;
     }
 
-    .timeline-item p {
+    .timeline-content .role {
+      margin: 0 0 15px;
+      font: 500 11px/1.6 var(--mono);
+    }
+
+    .timeline-content p {
       max-width: 680px;
       margin: 0;
-      color: #e1e1e1;
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
-    .timeline-note {
-      margin-top: 25px;
-      font: 10px/1.8 var(--mono);
-      color: #bbb;
+      color: #444;
+      font-size: 14px;
+      line-height: 1.8;
     }
 
     /* OUTRAS OBSESSÕES */
 
+    #obsessoes { background: #fafafa; }
+
     .ideas-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
     }
 
     .idea-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-height: 330px;
-      padding: clamp(22px, 3vw, 35px);
+      padding: clamp(24px, 4vw, 40px);
       border: var(--line-strong);
       background: white;
     }
 
-    .idea-card .idea-number {
+    .idea-number {
       font: 500 10px/1.6 var(--mono);
+      color: var(--muted);
     }
 
     .idea-card h3 {
-      margin: 45px 0 15px;
-      font: 600 clamp(25px, 4vw, 46px)/1.12 var(--mono);
-      letter-spacing: -.09em;
+      margin: 35px 0 15px;
+      font: 700 clamp(24px, 3.5vw, 38px)/1.08 var(--mono);
+      letter-spacing: -.08em;
     }
 
     .idea-card p {
-      max-width: 480px;
-      margin-bottom: 25px;
-      font-size: 13px;
+      margin: 0 0 25px;
+      color: #444;
+      font-size: 14px;
       line-height: 1.8;
     }
 
     .idea-card a {
-      margin-top: auto;
-      font: 500 10px var(--mono);
-      text-transform: lowercase;
+      display: inline-block;
+      font: 500 11px var(--mono);
       text-underline-offset: 5px;
-    }
-
-    .idea-card a:hover {
-      opacity: .55;
     }
 
     /* CONTATO */
 
     #contato {
-      padding: clamp(70px, 10vw, 130px) 0 45px;
-      background: white;
-      color: var(--ink);
-      border-top: var(--line-strong);
+      padding-block: clamp(75px, 12vw, 160px);
+      color: white;
+      background: var(--ink);
     }
+
+    #contato .eyebrow { color: #ccc; }
+
+    #contato .eyebrow::before { background: white; }
 
     .contact-title {
       margin: 50px 0;
-      font: 700 clamp(46px, 11vw, 155px)/1.02 var(--mono);
-      letter-spacing: -.115em;
+      font: 700 clamp(48px, 12vw, 160px)/.88 var(--mono);
+      letter-spacing: -.11em;
       overflow-wrap: anywhere;
     }
 
     .contact-title span {
       display: block;
+      color: #aaa;
       text-decoration: underline;
-      text-decoration-thickness: .055em;
-      text-underline-offset: .12em;
+      text-decoration-thickness: .045em;
+      text-underline-offset: .1em;
     }
 
     .contact-bottom {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       align-items: end;
-      gap: 35px;
-      padding-top: 25px;
-      border-top: var(--line-strong);
+      padding-top: 30px;
+      border-top: 1px solid #444;
     }
 
     .contact-bottom p {
-      max-width: 450px;
+      max-width: 500px;
+      margin: 0;
+      color: #ccc;
       font-size: 14px;
       line-height: 1.8;
     }
@@ -855,315 +623,364 @@
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      justify-content: flex-end;
+      gap: 18px;
     }
 
     .contact-links a {
-      padding: 12px 14px;
-      border: var(--line-strong);
-      color: var(--ink);
-      font: 500 10px var(--mono);
-      text-decoration: none;
-      text-transform: lowercase;
-      transition: background .15s, color .15s;
-    }
-
-    .contact-links a:hover {
-      background: var(--ink);
-      color: white;
+      font: 500 11px var(--mono);
+      text-underline-offset: 5px;
     }
 
     footer {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
-      padding: 20px var(--gutter);
-      border-top: var(--line);
-      font: 500 9px/1.8 var(--mono);
-      text-transform: lowercase;
+      padding: 22px var(--gutter);
+      font: 500 9px/1.6 var(--mono);
     }
 
-    footer a {
-      text-underline-offset: 4px;
+    footer a { text-decoration: none; }
+
+    /* POP-UP DOS CASES */
+
+    .project-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, .72);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s, visibility .2s;
+    }
+
+    .project-modal.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .project-modal-panel {
+      position: relative;
+      width: min(760px, 100%);
+      max-height: min(85vh, 900px);
+      overflow-y: auto;
+      padding: clamp(25px, 5vw, 55px);
+      border: 2px solid var(--ink);
+      background: white;
+      transform: translateY(15px);
+      transition: transform .2s;
+    }
+
+    .project-modal.is-open .project-modal-panel {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border: var(--line-strong);
+      background: white;
+      color: var(--ink);
+      font: 500 20px var(--mono);
+      cursor: pointer;
+    }
+
+    .modal-label {
+      padding-right: 50px;
+      font: 500 10px/1.6 var(--mono);
+      text-transform: uppercase;
+    }
+
+    .modal-title {
+      margin: 35px 0;
+      font: 700 clamp(30px, 6vw, 60px)/1 var(--mono);
+      letter-spacing: -.09em;
+    }
+
+    .modal-description {
+      display: grid;
+      gap: 18px;
+    }
+
+    .modal-description p {
+      margin: 0;
+      color: #444;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .modal-description strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font: 600 11px/1.6 var(--mono);
+      text-transform: uppercase;
+    }
+
+    .modal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 30px;
+    }
+
+    .modal-tags span {
+      padding: 6px 9px;
+      border: 1px solid #d6d6d6;
+      font: 500 9px/1.4 var(--mono);
+      text-transform: uppercase;
+    }
+
+    .modal-link {
+      display: inline-block;
+      margin-top: 30px;
+      font: 500 11px var(--mono);
+      text-underline-offset: 5px;
     }
 
     /* RESPONSIVIDADE */
 
-    @media (max-width: 800px) {
-      :root {
-        --gutter: 6%;
-      }
+    @media (max-width: 760px) {
+      :root { --gutter: 6%; }
+
+      html { scroll-padding-top: 75px; }
 
       .nav {
-        min-height: 65px;
+        min-height: 68px;
+        flex-wrap: wrap;
       }
 
-      .menu-toggle {
-        display: block;
-      }
+      .menu-toggle { display: block; }
 
       .nav-links {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        padding: 25px var(--gutter);
-        background: white;
-        border-bottom: var(--line-strong);
-        align-items: stretch;
+        width: 100%;
         flex-direction: column;
-        gap: 22px;
+        align-items: stretch;
+        gap: 0;
+        padding: 0 0 18px;
       }
 
-      .nav-links.open {
-        display: flex;
-      }
+      .nav-links.open { display: flex; }
 
       .nav-links a {
-        font-size: 12px;
+        padding: 13px 0;
+        border-top: var(--line);
+        font-size: 11px;
       }
 
       .nav-links .nav-cta {
-        align-self: flex-start;
-      }
-
-      .hero-middle {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .hero-side {
-        justify-self: start;
-      }
-
-      .intro-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .about-poster {
-        min-height: 300px;
-      }
-
-      .timeline-item {
-        grid-template-columns: 125px 1fr;
-        gap: 20px;
-      }
-
-      .contact-bottom {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .project-modal {
+        margin-top: 8px;
         padding: 12px;
+        text-align: center;
       }
 
-      .project-modal-panel {
-        max-height: 90vh;
-        padding: 25px;
-        box-shadow: 5px 5px 0 white;
-      }
-    }
+      .hero { padding-top: 55px; }
 
-    @media (max-width: 540px) {
       .hero-top {
         align-items: flex-start;
+        margin-bottom: 45px;
       }
 
-      .hero-top .mono {
-        font-size: 9px;
-      }
-
-      .hero-title {
-        font-size: clamp(37px, 10vw, 56px);
-      }
+      .hero-top .mono { font-size: 9px; }
 
       .hero-middle {
-        margin-top: 45px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .hero-side { justify-self: start; }
+
+      .intro-grid,
+      .work-grid,
+      .ideas-grid,
+      .contact-bottom {
+        grid-template-columns: 1fr;
       }
 
       .section-heading {
-        flex-direction: column;
         align-items: flex-start;
-        gap: 14px;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 35px;
       }
 
-      .section-heading > p {
-        margin: 0;
-      }
-
-      .work-grid,
-      .ideas-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .work-art {
-        min-height: 220px;
-      }
+      .section-heading > p { max-width: 420px; }
 
       .timeline-item {
         grid-template-columns: 1fr;
         gap: 12px;
       }
 
-      .timeline-date br {
-        display: none;
-      }
-
-      .idea-card {
-        min-height: 280px;
-      }
-
-      .contact-title {
-        font-size: clamp(42px, 12vw, 65px);
-      }
+      .contact-links { justify-content: flex-start; }
 
       footer {
-        flex-direction: column;
-        gap: 7px;
-      }
-
-      .modal-topline {
+        flex-wrap: wrap;
         align-items: flex-start;
-      }
-
-      .modal-project-title {
-        font-size: clamp(31px, 9vw, 50px);
-      }
-
-      .modal-project-description {
-        font-size: 13px;
       }
     }
 
+    @media (max-width: 420px) {
+      .hero-title { font-size: clamp(37px, 10vw, 45px); }
+
+      .hero-top { gap: 12px; }
+
+      .hero-top .mono { max-width: 48%; }
+
+      .work-art { min-height: 190px; }
+
+      .project-modal { padding: 10px; }
+
+      .project-modal-panel { max-height: 92vh; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
         transition-duration: .01ms !important;
       }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <nav class="nav wrap" aria-label="Navegação principal">
+    <div class="wrap nav">
       <a class="nav-brand" href="#inicio">
         thais basso
-        <span>comunicação & estratégia</span>
+        <span>redação & estratégia</span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle"
-        aria-expanded="false" aria-controls="navLinks" type="button">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
         menu +
       </button>
 
-      <div class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
         <a href="#sobre">sobre</a>
         <a href="#trabalhos">trabalhos</a>
         <a href="#trajetoria">trajetória</a>
-        <a href="#ideias">fora do expediente</a>
+        <a href="#obsessoes">obsessões</a>
         <a class="nav-cta" href="#contato">vamos conversar ↗</a>
+      </nav>
+    </div>
+
+    <!-- BANNER ROLANTE: AGORA FICA LOGO ABAIXO DOS LINKS DE NAVEGAÇÃO -->
+    <div class="ticker" aria-label="Redação, estratégia, criatividade e comunicação">
+      <div class="ticker-track" aria-hidden="true">
+        <div class="ticker-item">
+          REDAÇÃO <span>✳</span> ESTRATÉGIA <span>✳</span> CRM <span>✳</span> CAMPANHAS <span>✳</span> IDEIAS <span>✳</span> PERFORMANCE <span>✳</span> CRIATIVIDADE <span>✳</span>
+        </div>
+        <div class="ticker-item">
+          REDAÇÃO <span>✳</span> ESTRATÉGIA <span>✳</span> CRM <span>✳</span> CAMPANHAS <span>✳</span> IDEIAS <span>✳</span> PERFORMANCE <span>✳</span> CRIATIVIDADE <span>✳</span>
+        </div>
       </div>
-    </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero wrap" id="inicio">
       <div class="hero-top">
-        <span class="mono">portfólio independente<br>2026 ↘</span>
+        <p class="mono">portfólio independente<br>São Paulo, Brasil</p>
+        <p class="mono">redação / estratégia / criatividade<br>atualizado em 2026</p>
       </div>
 
-      <p class="hero-kicker"></p>
+      <p class="hero-kicker">oi, eu sou a thais. prazer.</p>
 
       <h1 class="hero-title">
-        <span class="line">oi, eu sou a</span>
-        <span class="line">thais basso</span>
+        <span class="line">o chatgpt disse</span>
+        <span class="line">que eu escrevo</span>
+        <span class="line">bem.</span>
       </h1>
 
       <div class="hero-middle">
         <div class="hero-intro">
-          Eu escrevo pra sobreviver. <strong>Literalmente.</strong>
+          Eu escrevo para marcas que precisam <strong>ser entendidas, lembradas e escolhidas.</strong>
         </div>
 
         <div class="hero-side">
-          <span class="eyebrow">QUEM</span>
           <p>
-            Redatora que flerta horrores com tech.
-            Crio ideias que vendem, textos que convertem e ferramentas de criatividade pra todo tipo de profissional curioso.
+            Redatora sênior com experiência em comunicação, campanhas, CRM e conteúdo. Gosto de boas perguntas, ideias com intenção e textos que fazem alguma coisa acontecer.
           </p>
           <a class="arrow-link" href="#trabalhos">
-            ver trabalhos <span class="arrow">↘</span>
+            <span class="arrow">↓</span>
+            <span>conheça alguns trabalhos</span>
           </a>
         </div>
       </div>
     </section>
 
-    <div class="ticker" aria-label="Redação, estratégia, criatividade e performance">
-      <div class="ticker-track" aria-hidden="true">
-        <div class="ticker-item">redação <span>✳</span> estratégia <span>✳</span> criatividade <span>✳</span> performance <span>✳</span> cultura <span>✳</span></div>
-        <div class="ticker-item">redação <span>✳</span> estratégia <span>✳</span> criatividade <span>✳</span> performance <span>✳</span> cultura <span>✳</span></div>
-      </div>
-    </div>
-
-    <section class="section wrap" id="sobre">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">manifesto em construção</span>
-          <h2>o que<br>eu faço</h2>
-        </div>
-        <p>Palavra é trabalho.</p>
-      </div>
-
-      <div class="intro-grid">
-        <div>
-          <div class="intro-copy">
-            Entre o que uma marca diz e o que as pessoas querem ouvir, tem um <em>espacinho interessante.</em>
+    <section class="section" id="sobre">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">01 / sobre</span>
+            <h2>o que eu<br>faço.</h2>
           </div>
-          <p class="intro-note">
-            É aí que eu entro: entendo o problema, encontro o ângulo certo e transformo estratégia em comunicação que faz sentido pra gente de verdade.
+          <p>
+            Texto é o começo. O trabalho é entender o contexto, encontrar a ideia e fazer a mensagem chegar onde precisa.
           </p>
         </div>
 
-        <div class="service-list">
-          <article class="service">
-            <span class="service-number">01/</span>
-            <div>
-              <h3>Campanhas & conceitos</h3>
-              <p>Desenrola Brasil, estruturação de chatbot, desdobramentos criativos, textos de campanha e IA inserida sem medo do processo criativo à concepção.</p>
+        <div class="intro-grid">
+          <div>
+            <div class="intro-copy">
+              Estratégia sem texto bom é só <em>uma reunião que poderia ser um e-mail.</em>
             </div>
-          </article>
+            <p class="intro-note">
+              Trabalho na interseção entre linguagem, negócio e comportamento. Transformo briefings em comunicação clara, relevante e alinhada aos objetivos da marca — sem perder a personalidade no caminho.
+            </p>
+          </div>
 
-          <article class="service">
-            <span class="service-number">02/</span>
-            <div>
-              <h3>CRM & jornadas</h3>
-              <p>Réguas e jornadas de comunicação, construção de superapp, criação de e-mails, landing pages e conteúdo pensado para cada etapa da relação com cada segmento.</p>
-            </div>
-          </article>
+          <div class="service-list">
+            <article class="service">
+              <span class="service-number">01</span>
+              <div>
+                <h3>Redação & conceito</h3>
+                <p>Conceitos criativos, campanhas, manifestos, roteiros, conteúdo para redes sociais e textos que precisam de uma ideia por trás.</p>
+              </div>
+            </article>
 
-          <article class="service">
-            <span class="service-number">03/</span>
-            <div>
-              <h3>Estratégia & performance</h3>
-              <p>Trabalho orientado por contexto, comportamento, dados de campanha e experimentação — sem confundir métrica com ideia.</p>
-            </div>
-          </article>
+            <article class="service">
+              <span class="service-number">02</span>
+              <div>
+                <h3>CRM & comunicação de jornada</h3>
+                <p>Réguas, e-mails, push, SMS e mensagens pensadas para o momento, o canal e a necessidade de cada público.</p>
+              </div>
+            </article>
 
-          <article class="service">
-            <span class="service-number">04/</span>
-            <div>
-              <h3>Conteúdo & tecnologia</h3>
-              <p>Pesquisa, experimentação com IA e novas formas de tirar ideias do papel sem terceirizar o pensamento para a ferramenta.</p>
-            </div>
-          </article>
+            <article class="service">
+              <span class="service-number">03</span>
+              <div>
+                <h3>Landing pages & performance</h3>
+                <p>Arquitetura de conteúdo, hierarquia de informação e copy orientada à clareza, à experiência e à conversão.</p>
+              </div>
+            </article>
+
+            <article class="service">
+              <span class="service-number">04</span>
+              <div>
+                <h3>Estratégia de conteúdo & IA</h3>
+                <p>Pesquisa, experimentação e uso de ferramentas de inteligência artificial para ampliar possibilidades sem terceirizar o pensamento.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1172,151 +989,94 @@
       <div class="wrap">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">arquivo de coisas feitas</span>
-            <h2>seleção de<br>trabalheira</h2>
+            <span class="eyebrow">02 / trabalhos</span>
+            <h2>algumas<br>provas.</h2>
           </div>
-          <p>Só a nata do mercado.</p>
+          <p class="work-intro">
+            Projetos de comunicação, campanhas e conteúdo. Clique em cada bloco para conhecer um pouco mais do contexto e da minha atuação.
+          </p>
         </div>
 
         <div class="work-grid">
-          <button class="work-card" type="button" data-project="bradesco"
-            aria-haspopup="dialog" aria-label="Abrir detalhes do projeto Bradesco">
+          <button class="work-card" type="button" data-project="bradesco" aria-haspopup="dialog">
             <div class="work-art">
               <span class="art-label">01 / comunicação financeira</span>
-              <div class="art-big">bradesco</div>
+              <h3 class="art-big">BRADESCO</h3>
             </div>
             <div class="work-content">
               <div class="work-meta">
-                <span class="tag">Bradesco</span>
-                <span class="tag">Criatividade</span>
+                <span class="tag">CRM</span>
+                <span class="tag">Campanhas</span>
                 <span class="tag">Performance</span>
               </div>
-              <h3>Comunicação que aprende com o caminho</h3>
-              <p>
-                Experiência com jornadas, réguas de comunicação, campanhas e landing pages. Trabalho de texto conectado à segmentação, à hierarquia de informação e à leitura de indicadores.
-              </p>
-              <span class="work-link">abrir projeto ↗</span>
-              <span class="click-hint">clique para explorar ↗</span>
+              <h3>Comunicação que aprende com o caminho.</h3>
+              <p>Redação e estratégia para diferentes jornadas, canais e objetivos de negócio, com atenção à segmentação e à performance.</p>
+              <div class="work-open">
+                <span>conhecer o projeto</span>
+                <span>↗</span>
+              </div>
             </div>
           </button>
 
-          <button class="work-card" type="button" data-project="santander"
-            aria-haspopup="dialog" aria-label="Abrir detalhes do projeto Santander">
+          <button class="work-card" type="button" data-project="santander" aria-haspopup="dialog">
             <div class="work-art">
               <span class="art-label">02 / campanhas integradas</span>
-              <div class="art-big">santander</div>
+              <h3 class="art-big">SANTANDER</h3>
             </div>
             <div class="work-content">
               <div class="work-meta">
-                <span class="tag">Santander</span>
                 <span class="tag">Campanhas</span>
                 <span class="tag">CRM</span>
-              </div>
-              <h3>Uma mensagem, vários pontos de contato</h3>
-              <p>
-                Atuação em campanhas e comunicação para canais digitais, com desdobramentos de texto, jornadas e peças orientadas a objetivos de negócio.
-              </p>
-              <span class="work-link">abrir projeto ↗</span>
-              <span class="click-hint">clique para explorar ↗</span>
-            </div>
-          </button>
-
-          <button class="work-card" type="button" data-project="petz"
-            aria-haspopup="dialog" aria-label="Abrir detalhes do projeto Petz">
-            <div class="work-art">
-              <span class="art-label">03 / marca & conteúdo</span>
-              <div class="art-big">petz</div>
-            </div>
-            <div class="work-content">
-              <div class="work-meta">
-                <span class="tag">Petz</span>
                 <span class="tag">Conteúdo</span>
-                <span class="tag">Marca</span>
               </div>
-              <h3>Conteúdo com voz própria</h3>
-              <p>
-                Rebranding, comunicação de marca, campanhas para produtos próprios e conteúdo para diferentes pontos de contato.
-              </p>
-              <span class="work-link">abrir projeto ↗</span>
-              <span class="click-hint">clique para explorar ↗</span>
+              <h3>Uma mensagem, vários pontos de contato.</h3>
+              <p>Desdobramento de campanhas e conteúdos digitais considerando a linguagem, o público e a função de cada canal.</p>
+              <div class="work-open">
+                <span>conhecer o projeto</span>
+                <span>↗</span>
+              </div>
             </div>
           </button>
 
-          <button class="work-card" type="button" data-project="ia"
-            aria-haspopup="dialog" aria-label="Abrir detalhes do projeto de IA">
+          <button class="work-card" type="button" data-project="petz" aria-haspopup="dialog">
             <div class="work-art">
-              <span class="art-label">04 / pesquisa & experimentação</span>
-              <div class="art-big small">ideias fora<br>do ctrl+c.</div>
+              <span class="art-label">03 / marca e conteúdo</span>
+              <h3 class="art-big">PETZ</h3>
             </div>
             <div class="work-content">
               <div class="work-meta">
-                <span class="tag">IA</span>
-                <span class="tag">Criatividade</span>
-                <span class="tag">Pesquisa</span>
+                <span class="tag">Marca</span>
+                <span class="tag">Campanhas</span>
+                <span class="tag">Conteúdo</span>
               </div>
-              <h3>agora v.ai: a ferramenta do criativo travado</h3>
-              <p>
-                IA aplicada à pesquisa, prototipagem e produção de comunicação, com foco em ampliar possibilidades criativas.
-              </p>
-              <span class="work-link">abrir projeto ↗</span>
-              <span class="click-hint">clique para explorar ↗</span>
+              <h3>Conteúdo com voz própria.</h3>
+              <p>Comunicação de marca e campanhas com equilíbrio entre personalidade, clareza e objetivo de negócio.</p>
+              <div class="work-open">
+                <span>conhecer o projeto</span>
+                <span>↗</span>
+              </div>
             </div>
           </button>
-        </div>
 
-        <p class="work-disclaimer">
-          &gt;&gt;&gt; Eu sei, já fiz muita coisa e isso é wonderful.
-        </p>
-      </div>
-    </section>
-
-    <div class="project-modal" id="projectModal" aria-hidden="true" role="presentation">
-      <section class="project-modal-panel" id="projectModalPanel"
-        role="dialog" aria-modal="true" aria-labelledby="modalTitle"
-        aria-describedby="modalDescription" tabindex="-1">
-        <div class="modal-topline">
-          <span class="modal-label" id="modalLabel">Projeto</span>
-          <button class="modal-close" id="modalClose" type="button"
-            aria-label="Fechar janela do projeto">fechar ✕</button>
-        </div>
-
-        <h2 class="modal-project-title" id="modalTitle">Projeto</h2>
-        <div class="modal-project-description" id="modalDescription"></div>
-        <div class="modal-project-tags" id="modalTags"></div>
-
-        <a class="modal-project-link" id="modalLink"
-          href="https://www.behance.net/thaisbassocc"
-          target="_blank" rel="noopener noreferrer">
-          ver mais trabalhos ↗
-        </a>
-      </section>
-    </div>
-
-    <section class="section wrap">
-      <div class="about-grid">
-        <div class="about-poster">
-          <span class="poster-small">Uma cabeça com várias abas abertas e uma delas tá tocando Aviões do Forró no volume 52.</span>
-          <div class="poster-big">não<br>é só<br>texto.</div>
-        </div>
-
-        <div>
-          <span class="eyebrow">quem está por trás das palavras</span>
-          <div class="about-copy">
-            <p>
-              Sou Thais Basso. Gosto de entender por que as pessoas fazem o que fazem — e o que uma marca pode dizer que não pareça ter saído de uma reunião com 47 slides.
-            </p>
-            <p>
-              <span class="highlight">Estratégia sem curiosidade fica burocrática.</span>
-              Criatividade sem contexto fica decorativa. Eu prefiro trabalhar onde as duas se encontram.
-            </p>
-          </div>
-          <p class="about-small">
-            Minha experiência passa por redação publicitária, campanhas, CRM, conteúdo digital e comunicação orientada por dados. Também escrevo sobre marketing, tecnologia, internet e cultura — porque repertório não aparece por geração espontânea.
-          </p>
-          <a class="arrow-link" href="https://www.linkedin.com/in/cc-thais-basso/"
-            target="_blank" rel="noopener noreferrer">
-            mais sobre minha trajetória <span class="arrow">↗</span>
-          </a>
+          <button class="work-card" type="button" data-project="ia" aria-haspopup="dialog">
+            <div class="work-art">
+              <span class="art-label">04 / pesquisa e experimentação</span>
+              <h3 class="art-big small">IA + CRIATIVIDADE</h3>
+            </div>
+            <div class="work-content">
+              <div class="work-meta">
+                <span class="tag">Inteligência artificial</span>
+                <span class="tag">Pesquisa</span>
+                <span class="tag">Tecnologia</span>
+              </div>
+              <h3>Ideias fora do Ctrl+C.</h3>
+              <p>Experimentação com IA aplicada à pesquisa, à prototipagem e ao processo criativo, com pensamento crítico no centro.</p>
+              <div class="work-open">
+                <span>conhecer o projeto</span>
+                <span>↗</span>
+              </div>
+            </div>
+          </button>
         </div>
       </div>
     </section>
@@ -1325,319 +1085,9 @@
       <div class="wrap">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">experiência profissional</span>
-            <h2>já estive<br>por aí.</h2>
+            <span class="eyebrow">03 / trajetória</span>
+            <h2>por onde<br>passei.</h2>
           </div>
-          <p>Marcas, equipes e problemas diferentes. A mesma vontade de encontrar a mensagem certa.</p>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-date">2025 — 2026<br>redação sênior</div>
-            <div>
-              <h3>Bradesco</h3>
-              <p>
-                Redação para campanhas e jornadas de comunicação, com atuação em CRM, landing pages, roteiros e colaboração com equipes de marketing, produto, design e tecnologia.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-date">2024 — 2025<br>redação</div>
-            <div>
-              <h3>Santander</h3>
-              <p>
-                Desenvolvimento e desdobramento de campanhas, réguas de comunicação e peças para canais digitais, considerando contexto, formato e objetivo de cada mensagem.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-date">2023 — 2024<br>redação</div>
-            <div>
-              <h3>Petz</h3>
-              <p>
-                Trabalho com comunicação de marca, campanhas e conteúdo para diferentes canais e momentos da jornada do público.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <p class="timeline-note">
-          Datas e cargos resumidos para apresentação. Ajuste os períodos e títulos conforme a versão final do seu currículo.
-        </p>
-      </div>
-    </section>
-
-    <section class="section wrap" id="ideias">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">fora do expediente, mais ou menos</span>
-          <h2>outras<br>obsessões.</h2>
-        </div>
-        <p>Porque pensar em comunicação também é prestar atenção no mundo. Infelizmente, o mundo não desliga às 18h.</p>
-      </div>
-
-      <div class="ideas-grid">
-        <article class="idea-card">
-          <span class="idea-number">01 / NEWSLETTER</span>
-          <h3>Internet, marketing e outras coisas.</h3>
           <p>
-            Textos sobre cultura digital, tecnologia, criatividade e as esquisitices do mercado. Com opinião própria e pouca paciência para jargão vazio.
+            Experiências que me ensinaram a pensar em marca, público, canal e resultado — e a escrever com tudo isso em mente.
           </p>
-          <a href="https://thaisbasso.substack.com/" target="_blank" rel="noopener noreferrer">ler no Substack ↗</a>
-        </article>
-
-        <article class="idea-card">
-          <span class="idea-number">02 / PROJETOS VISUAIS</span>
-          <h3>Ideias que saem da cabeça.</h3>
-          <p>
-            Uma seleção de trabalhos e experimentações visuais reunidos no meu portfólio. Campanhas, formatos e explorações criativas.
-          </p>
-          <a href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">ver no Behance ↗</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="contato">
-      <div class="wrap">
-        <span class="eyebrow">fim da página, começo da conversa</span>
-
-        <h2 class="contact-title">
-          TEM UMA
-          <span>IDEIA?</span>
-          VAMOS.
-        </h2>
-
-        <div class="contact-bottom">
-          <p>
-            Se você procura alguém para pensar, escrever, questionar o briefing e transformar ideia em comunicação, meus canais estão aqui.
-          </p>
-
-          <div class="contact-links">
-            <a href="https://www.linkedin.com/in/cc-thais-basso/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a href="https://www.behance.net/thaisbassocc" target="_blank" rel="noopener noreferrer">Behance ↗</a>
-            <a href="https://thaisbasso.substack.com/" target="_blank" rel="noopener noreferrer">Substack ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>© <span id="year"></span> Thais Basso</span>
-    <span>Feito com texto, contexto e algumas ideias tortas.</span>
-    <a href="#inicio">voltar ao topo ↑</a>
-  </footer>
-
-  <script>
-    /* MENU MOBILE */
-
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "fechar −" : "menu +";
-    });
-
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.textContent = "menu +";
-      });
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    /* CONTEÚDO DOS POP-UPS */
-
-    const projectDetails = {
-      bradesco: {
-        label: "01 / Bradesco / Comunicação financeira",
-        title: "Comunicação que aprende com o caminho",
-        description: `
-          <p>
-            <strong>O contexto</strong>
-            Comunicação para uma marca financeira em diferentes jornadas e pontos de contato, conectando necessidades do público a objetivos de negócio.
-          </p>
-          <p>
-            <strong>Minha atuação</strong>
-            Redação de campanhas, réguas de comunicação, landing pages e roteiros, em colaboração com equipes de marketing, produto, design e tecnologia.
-          </p>
-          <p>
-            <strong>O olhar estratégico</strong>
-            Segmentação, hierarquia da informação, adequação da mensagem ao canal e análise de indicadores para identificar oportunidades de melhoria.
-          </p>
-        `,
-        tags: ["Bradesco", "CRM", "Campanhas", "Performance"],
-        url: "https://www.behance.net/thaisbassocc",
-        linkLabel: "ver portfólio no Behance ↗"
-      },
-
-      santander: {
-        label: "02 / Santander / Campanhas integradas",
-        title: "Uma mensagem, vários pontos de contato",
-        description: `
-          <p>
-            <strong>O contexto</strong>
-            Campanhas e comunicação digital para diferentes públicos, canais e objetivos de negócio.
-          </p>
-          <p>
-            <strong>Minha atuação</strong>
-            Desenvolvimento e desdobramento de textos para campanhas, jornadas de comunicação e peças digitais, respeitando as características e limitações de cada formato.
-          </p>
-          <p>
-            <strong>O olhar estratégico</strong>
-            Coerência entre a ideia central, a mensagem e o momento de contato com o público, sem tratar todos os canais como se fossem iguais.
-          </p>
-        `,
-        tags: ["Santander", "Campanhas", "CRM", "Conteúdo"],
-        url: "https://www.behance.net/thaisbassocc",
-        linkLabel: "ver portfólio no Behance ↗"
-      },
-
-      petz: {
-        label: "03 / Petz / Marca e conteúdo",
-        title: "Conteúdo com voz própria",
-        description: `
-          <p>
-            <strong>O contexto</strong>
-            Comunicação de marca, campanhas e conteúdo para diferentes canais e pontos de contato.
-          </p>
-          <p>
-            <strong>Minha atuação</strong>
-            Criação e adaptação de textos para campanhas e iniciativas de marca, considerando linguagem, público e objetivo de comunicação.
-          </p>
-          <p>
-            <strong>O olhar estratégico</strong>
-            Encontrar o equilíbrio entre personalidade de marca, clareza da mensagem e necessidades reais de quem recebe a comunicação.
-          </p>
-        `,
-        tags: ["Petz", "Marca", "Campanhas", "Conteúdo"],
-        url: "https://www.behance.net/thaisbassocc",
-        linkLabel: "ver portfólio no Behance ↗"
-      },
-
-      ia: {
-        label: "04 / IA / Pesquisa e experimentação",
-        title: "Ideias fora do Ctrl+C",
-        description: `
-          <p>
-            <strong>O contexto</strong>
-            Experimentação com inteligência artificial aplicada à comunicação, à pesquisa e ao processo criativo.
-          </p>
-          <p>
-            <strong>Minha atuação</strong>
-            Uso de ferramentas de IA para pesquisa, prototipagem, produção, revisão de conteúdo e exploração de novas possibilidades de trabalho.
-          </p>
-          <p>
-            <strong>O olhar estratégico</strong>
-            Tecnologia como apoio para ampliar repertório e testar caminhos, mantendo a intenção criativa, o pensamento crítico e a responsabilidade editorial no centro do processo.
-          </p>
-        `,
-        tags: ["Inteligência artificial", "Criatividade", "Pesquisa", "Tecnologia"],
-        url: "https://thaisbasso.substack.com/",
-        linkLabel: "ler meus textos no Substack ↗"
-      }
-    };
-
-    /* COMPORTAMENTO DAS JANELAS */
-
-    const projectModal = document.getElementById("projectModal");
-    const modalPanel = document.getElementById("projectModalPanel");
-    const modalClose = document.getElementById("modalClose");
-    const modalLabel = document.getElementById("modalLabel");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDescription = document.getElementById("modalDescription");
-    const modalTags = document.getElementById("modalTags");
-    const modalLink = document.getElementById("modalLink");
-
-    let lastFocusedCard = null;
-
-    function openProject(card) {
-      const project = projectDetails[card.dataset.project];
-      if (!project) return;
-
-      lastFocusedCard = card;
-
-      modalLabel.textContent = project.label;
-      modalTitle.textContent = project.title;
-      modalDescription.innerHTML = project.description;
-      modalLink.href = project.url;
-      modalLink.textContent = project.linkLabel;
-
-      modalTags.replaceChildren();
-
-      project.tags.forEach((tagText) => {
-        const tag = document.createElement("span");
-        tag.textContent = tagText;
-        modalTags.appendChild(tag);
-      });
-
-      modalTitle.style.color = "var(--ink)";
-
-      projectModal.classList.add("is-open");
-      projectModal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
-      modalClose.focus();
-    }
-
-    function closeProject() {
-      if (!projectModal.classList.contains("is-open")) return;
-
-      projectModal.classList.remove("is-open");
-      projectModal.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("modal-open");
-
-      if (lastFocusedCard) {
-        lastFocusedCard.focus();
-      }
-    }
-
-    document.querySelectorAll(".work-card[data-project]").forEach((card) => {
-      card.addEventListener("click", () => openProject(card));
-    });
-
-    modalClose.addEventListener("click", closeProject);
-
-    projectModal.addEventListener("click", (event) => {
-      if (event.target === projectModal) closeProject();
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (
-        event.key === "Escape" &&
-        projectModal.classList.contains("is-open")
-      ) {
-        closeProject();
-      }
-    });
-
-    /* MANTÉM O FOCO DENTRO DA JANELA */
-
-    modalPanel.addEventListener("keydown", (event) => {
-      if (event.key !== "Tab") return;
-
-      const focusable = modalPanel.querySelectorAll(
-        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      );
-
-      if (!focusable.length) return;
-
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    });
-  </script>
-</body>
-</html>
